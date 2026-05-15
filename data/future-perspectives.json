@@ -1,0 +1,239 @@
+{
+  "title": "Perspetivas Futuras",
+  "introduction": "A definição de objetivos concretos e mensuráveis é parte integrante da estratégia de sustentabilidade da Nexa. Com base nos dados recolhidos em 2025 e nas conclusões da análise de dupla materialidade, foram identificadas as seguintes prioridades para os próximos anos.",
+  "certificationStrategy": {
+    "title": "Certificação e automatização",
+    "description": "A Nexa iniciou a implementação de uma estratégia estruturada de certificação dos ativos geridos pelos OIC, como parte integrante do plano de mitigação de riscos climáticos e de valorização sustentável do seu portfólio.",
+    "portfolioAlignment": {
+      "totalGFA": 243552.3,
+      "totalGFAUnit": "m²",
+      "totalAssetsExclLandbank": 14,
+      "alignedWithStrategy": 98.0,
+      "alignedUnit": "%",
+      "breakdown": [
+        {
+          "category": "Operação - Certificado Emitido",
+          "share": 0.7,
+          "gfa": 1660.0,
+          "assets": 1
+        },
+        {
+          "category": "Operação - Com obj. certificar",
+          "share": 7.6,
+          "gfa": 18563.7,
+          "assets": 2
+        },
+        {
+          "category": "Operação - Sem obj. certificar",
+          "share": 2.0,
+          "gfa": 4888.0,
+          "assets": 4
+        },
+        {
+          "category": "Construção - Cert. em desenvolvimento",
+          "share": 11.9,
+          "gfa": 29080.6,
+          "assets": 2
+        },
+        {
+          "category": "Construção - Com obj. certificar",
+          "share": 5.4,
+          "gfa": 13200.0,
+          "assets": 1
+        },
+        {
+          "category": "Projetos - OPR em implementação",
+          "share": 30.9,
+          "gfa": 75160.0,
+          "assets": 2
+        },
+        {
+          "category": "Projetos - Com obj. certificar",
+          "share": 41.5,
+          "gfa": 101000.0,
+          "assets": 2
+        }
+      ]
+    },
+    "certificationMatrix": {
+      "note": "Estratégia de certificação por tipologia. WELL, WiredScore e SmartScore não são ambicionadas por defeito, sendo avaliadas caso a caso.",
+      "matrix": [
+        { "type": "Residencial Unifamiliar - médio", "LEED_BREEAM": "OPR do Castro Group" },
+        { "type": "Residencial Unifamiliar - luxo", "LEED_BREEAM": "Certified" },
+        { "type": "Residencial Multifamiliar - médio", "LEED_BREEAM": "OPR do Castro Group" },
+        { "type": "Residencial Multifamiliar - luxo", "LEED_BREEAM": "Certified / Pass" },
+        { "type": "Hotel", "LEED_BREEAM": "Gold / Very Good" },
+        { "type": "Escritórios", "LEED_BREEAM": "Silver / Superior", "WELL": "Silver / Superior", "WIRED_SCORE": "Gold" },
+        { "type": "Retalho", "LEED_BREEAM": "Gold / Superior" },
+        { "type": "Logística", "LEED_BREEAM": "Silver / Superior" }
+      ]
+    },
+    "objectives2026": [
+      "Fecho das certificações LEED, WELL, WiredScore e SmartScore do SPARK",
+      "Fecho da certificação LEED do The Breeze",
+      "Arranque da certificação LEED do Valpark",
+      "Definir estratégia de certificação ou OPR para os 4 ativos sob gestão por terceiros"
+    ]
+  },
+  "automation": {
+    "title": "Automatização",
+    "description": "Em 2025 foi implementado o software Arc para recolha e monitorização de dados de sustentabilidade dos ativos. O objetivo para os próximos anos é integrar o sistema de gestão técnica centralizada (GTC) dos novos edifícios em operação com o Arc, permitindo que os dados de consumos de energia, água e outros indicadores ambientais sejam recolhidos de forma automática e direta, sem necessidade de introdução manual."
+  },
+  "environmental": {
+    "climateTransitionPlan2025_2030": {
+      "title": "Plano de Transição Climático 2025-2030",
+      "scope1and2Reduction": {
+        "target": -40,
+        "baseYear": 2025,
+        "targetYear": 2030,
+        "unit": "%",
+        "projection": -68.8,
+        "projectionTonCO2e": 9.4,
+        "exceedsTargetByMargin": true
+      },
+      "yearlyProjection": [
+        { "year": 2025, "scope1": 8.1, "scope2": 21.9, "total": 30.0, "reduction": null },
+        { "year": 2026, "scope1": 8.1, "scope2": 20.3, "total": 28.4, "reduction": -5.3 },
+        { "year": 2027, "scope1": 8.1, "scope2": 17.9, "total": 26.0, "reduction": -13.1 },
+        { "year": 2028, "scope1": 4.1, "scope2": 15.6, "total": 19.7, "reduction": -34.4 },
+        { "year": 2029, "scope1": 4.1, "scope2": 14.8, "total": 18.9, "reduction": -37.0 },
+        { "year": 2030, "scope1": 0.0, "scope2": 9.4, "total": 9.4, "reduction": -68.8 }
+      ],
+      "units": { "emissions": "TonCO₂e", "reduction": "%" },
+      "pillars": [
+        "Eletrificação de 100% da frota (eliminando Scope 1)",
+        "Instalação de painéis fotovoltaicos nos ativos em operação sob gestão direta (Scope 2 de operação)",
+        "Expansão faseada de contratos de energia verde com GdO a todos os ativos"
+      ]
+    },
+    "renewableEnergyPhases": [
+      {
+        "phase": 1,
+        "status": "Concluída",
+        "description": "Palacete 31 de Janeiro opera com contrato de energia verde com GdO, resultando em emissões de Scope 2 em operação de 0,0 TonCO₂e em 2025."
+      },
+      {
+        "phase": 2,
+        "status": "Em curso (2026/2027)",
+        "description": "Instalação de painéis fotovoltaicos no Palacete 31 de Janeiro e no SPARK II. Obras a começar em 2026, com entrada em produção em 2027."
+      },
+      {
+        "phase": 3,
+        "status": "A definir (2027/2030)",
+        "description": "Avaliar a viabilidade de integração de produção de energia renovável on-site nos ativos sob gestão por terceiros."
+      }
+    ],
+    "scope3Strategy": {
+      "title": "Redução das Emissões de Scope 3",
+      "currentShare": 91.3,
+      "currentTotal2025": 312.6,
+      "unit": "TonCO₂e",
+      "approach": [
+        "Melhoria contínua da qualidade dos dados (2026: metodologia consolidada)",
+        "Definição de metas por categoria em 2027",
+        "Influenciar fornecedores, arquitetos, engenheiros, empreiteiros e inquilinos",
+        "Materiais com Declarações Ambientais de Produto (DAP)",
+        "Critérios de carbono incorporado nas decisões de projeto e procurement"
+      ]
+    },
+    "tenantDataCollection": {
+      "title": "Recolha de Dados Reais de Consumo dos Inquilinos",
+      "deadline": 2026,
+      "description": "Estabelecer mecanismos formais de recolha de dados reais junto dos inquilinos e operadores, substituindo progressivamente as estimativas por consumos verificados."
+    },
+    "waterReuse": {
+      "title": "Eficiência Hídrica e Reutilização de Água",
+      "current2025": 0.0,
+      "unit": "%",
+      "advances": [
+        "La Movida (entrou em operação em 2025): primeiro ativo com reservatório de recolha de águas pluviais",
+        "SPARK (em construção): prevê incorporação deste sistema"
+      ],
+      "indicator": "% de GFA com capacidade de reutilização hídrica instalada"
+    },
+    "lifecycleAnalysis": {
+      "title": "Análise do Ciclo de Vida dos Edifícios e Materiais",
+      "description": "Em 2025, no âmbito dos requisitos das certificações LEED dos ativos, foi iniciado o processo de recolha e análise de Declarações Ambientais de Produto (DAP) dos materiais utilizados em obra.",
+      "goal": "Aumentar progressivamente a percentagem de materiais com certificação DAP nas adjudicações"
+    },
+    "greenAreas": {
+      "title": "Áreas Verdes nos Projetos",
+      "indicator": "% de área verde por projeto",
+      "definitionYear": 2026
+    },
+    "wasteReduction": {
+      "title": "Redução de Resíduos na Operação",
+      "constructionShare2025": 99.2,
+      "valorizationRate": 97.3,
+      "unit": "%",
+      "operationalMeasures": [
+        "Eliminação de copos de papel",
+        "Melhoria dos sistemas de reciclagem"
+      ]
+    },
+    "climateRiskAnalysis": {
+      "title": "Análise de Riscos Climáticos Físicos e de Transição",
+      "physicalRisks": ["secas", "inundações"],
+      "pilotYear": 2026,
+      "integrationYear": 2027,
+      "coverageTarget": 100,
+      "coverageDeadline": 2030,
+      "unit": "% GFA sob gestão direta"
+    }
+  },
+  "social": {
+    "payGap": {
+      "title": "Gap Salarial e Igualdade de Oportunidades",
+      "current2025": 37.1,
+      "administracao": 0.0,
+      "unit": "%",
+      "actionYear": 2026,
+      "plan": "Plano de ação para convergência progressiva para neutralidade remuneratória em todas as categorias, incluindo política de atribuição de prémios mais equitativa e formações mais especializadas."
+    },
+    "training": {
+      "title": "Formação e Desenvolvimento",
+      "currentHours2025": 28.6,
+      "previousHours2024": 98.0,
+      "currentCoverage2025": 70,
+      "previousCoverage2024": 100,
+      "target2026": {
+        "coverage": 100,
+        "hoursPerPerson": 40,
+        "specificAreas": ["ESG", "compliance", "BCFT"]
+      }
+    },
+    "communities": {
+      "title": "Comunidades",
+      "initiatives2025": ["Green Education Plan", "Green Tour"],
+      "objectives2026": [
+        "Alargar abordagem a outros ativos (nomeadamente SPARK)",
+        "Parcerias com universidades para visitas e ciclos de formação",
+        "Apoio às comunidades artísticas através de novas parcerias",
+        "Estágios e programas de colaboração académica",
+        "Instituição de 1 dia anual de voluntariado por colaborador"
+      ]
+    },
+    "supplierCodeOfConduct": {
+      "title": "Código de Conduta ESG na Cadeia de valor",
+      "deadline": 2026,
+      "actions": [
+        "Simplificar e reformular o instrumento",
+        "Alargar âmbito a todas as obras em curso",
+        "Definir meta quantitativa de resposta"
+      ]
+    }
+  },
+  "governance": {
+    "externalMaterialityAnalysis": {
+      "title": "Análise de Dupla Materialidade Externa",
+      "year": 2026,
+      "description": "Aprofundar este exercício através de uma análise de dupla materialidade externa, integrando a perspetiva de stakeholders externos."
+    }
+  },
+  "economic": {
+    "sustainableFinancing": {
+      "title": "Financiamento Sustentável",
+      "description": "Analisar oportunidades de financiamento verde e sustentável para os projetos em desenvolvimento da carteira, explorando instrumentos e programas de incentivo alinhados com os critérios ESG dos OIC sob gestão."
+    }
+  }
+}

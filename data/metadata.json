@@ -1,0 +1,58 @@
+{
+  "report": {
+    "title": "Relatório de Sustentabilidade 2025",
+    "tagline": "Connect, Invest, Build the future.",
+    "edition": "1ª edição",
+    "year": 2025,
+    "fiscalPeriod": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "comparisonYear": 2024,
+    "language": "pt-PT",
+    "publisher": "Nexa SGOIC, S.A.",
+    "pdfFile": "pdfs/RS_NEXA_2025.pdf",
+    "pages": 38,
+    "esgResponsible": "Fernanda Zelaya"
+  },
+  "sections": [
+    {
+      "id": "01-nexa",
+      "number": "01",
+      "title": "Nexa",
+      "subsections": [
+        "Mensagem Board",
+        "Missão, Visão e Valores",
+        "Os nossos fundos",
+        "Os nossos ativos",
+        "As nossas pessoas"
+      ]
+    },
+    {
+      "id": "02-situacao-atual",
+      "number": "02",
+      "title": "Situação Atual",
+      "subsections": [
+        "Introdução",
+        "Environmental",
+        "Social",
+        "Governance",
+        "Economic"
+      ]
+    },
+    {
+      "id": "03-connect-invest-build",
+      "number": "03",
+      "title": "Connect, Invest, Build the future",
+      "subsections": [
+        "Perspetivas Futuras",
+        "Considerações Finais"
+      ]
+    },
+    {
+      "id": "04-materialidade",
+      "number": "04",
+      "title": "Análise de Dupla Materialidade"
+    }
+  ]
+}

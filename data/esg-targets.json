@@ -1,0 +1,95 @@
+{
+  "introduction": "A definição de métricas e metas constitui um passo essencial na operacionalização da estratégia de sustentabilidade da Nexa. Com base nas conclusões da análise de dupla materialidade realizada, e no alinhamento com as melhores práticas de reporte ESG, a Nexa estabeleceu em 2025 um conjunto estruturado de metas e métricas para cada dimensão ESG.",
+  "environmental": {
+    "title": "Promover a resiliência da carteira de ativos",
+    "description": "Sob gestão através da implementação de boas práticas ESG a análise de riscos físicos e de transição dos mesmos.",
+    "targets": [
+      {
+        "name": "Redução de emissões Scope 1 e 2",
+        "value": "40% até 2030",
+        "longTerm": "neutralidade até 2050"
+      },
+      {
+        "name": "Desenvolvimento do Plano de Ação Climático (Scope 1 e 2)",
+        "description": "Visa reduzir as emissões diretas e indiretas sob controlo operacional da Nexa.",
+        "scope1Includes": "Mobilidade direta ou deslocações da frota, fugas de fluídos frigorigéneos e consumo de gasóleo",
+        "scope2Includes": "Consumos de eletricidade",
+        "indicator": "Emissões de Scope 1 e 2",
+        "unit": "TonCO₂e anual",
+        "baseYearTBD": "A definir em 2026"
+      },
+      {
+        "name": "Plano de Ação Climático Scope 3",
+        "description": "Recolha de dados das emissões indiretas que não estão sob controlo operacional da Nexa.",
+        "scope3Includes": "Mobilidade indireta, viagens corporativas, transporte e gestão de resíduos, compras e adjudicações e gestão de ativos",
+        "indicator": "Emissões de Scope 3",
+        "unit": "TonCO₂e anual",
+        "definitionYear": "2027"
+      },
+      {
+        "name": "Green Asset Ratio for Asset Managers",
+        "description": "Gestão de OIC que tenham preocupações em: mitigação e adaptação às alterações climáticas, água, economia circular, poluição/biodiversidade/ecossistemas.",
+        "indicator": "Green Asset Ratio for Asset Managers",
+        "unit": "%",
+        "definitionYear": "2026"
+      }
+    ]
+  },
+  "social": {
+    "title": "Promoção das condições de trabalho dignas",
+    "description": "Garantir condições de trabalho dignas dos trabalhadores na nossa cadeia de valor. A igualdade de oportunidades, a progressão de carreira, o bom desempenho e a redução do Turnover, para garantir o bem-estar dos colaboradores.",
+    "targets": [
+      {
+        "name": "Condições de trabalho dignas",
+        "description": "Promoção e condições de trabalho dignas, igualdade de oportunidades, progressão de carreira, formação e saúde e segurança no trabalho.",
+        "indicatorTBD": "2026"
+      },
+      {
+        "name": "Código de conduta ESG",
+        "description": "Promoção do respeito pelos direitos humanos e identificação de incidentes severos ao longo da cadeia de fornecimento.",
+        "indicator": "% de resposta ao Código de conduta ESG",
+        "unit": "%",
+        "targetDefinition": "2026"
+      },
+      {
+        "name": "Plano de formação ESG",
+        "indicator": "Horas de formação",
+        "unit": "hs",
+        "definitionYear": "2026"
+      }
+    ]
+  },
+  "governance": {
+    "title": "Reforçar as práticas de governação",
+    "description": "Através da incorporação de critérios ESG, bem como garantir que as atividades de investimento estão alinhadas com a Taxonomia da UE e excluem setores e práticas contrárias a estes critérios.",
+    "internalProcedures": [
+      "Direitos dos acionistas",
+      "Políticas de remuneração",
+      "Composição dos órgãos de administração",
+      "Independência dos membros dos órgãos sociais",
+      "Atuação eficaz do Fiscal Único",
+      "Código de conduta corporativa",
+      "Proteção de denunciantes e mecanismos de reclamação",
+      "Envolvimento político e lobbying",
+      "Gestão de relações com fornecedores e práticas de pagamento",
+      "Prevenção à corrupção e suborno",
+      "Proporção de diversidade de género no conselho de administradores"
+    ]
+  },
+  "excludedSectors": {
+    "title": "Setores excluídos de possíveis Investimentos",
+    "description": "A Nexa não investe em entidades cuja atividade principal envolva, direta ou indiretamente, a produção, comercialização, distribuição ou promoção de produtos ou serviços associados a:",
+    "list": [
+      "Materiais Radioativos (excetuando quando utilizados para fins medicinais)",
+      "Atividades ilegais conforme estabelecido por Lei, ou sujeitas a eliminação progressiva ou proibição internacional",
+      "Corrupção, Branqueamento de Capitais e Financiamento do Terrorismo",
+      "Trabalho forçado e Trabalho infantil",
+      "Pornografia e Prostituição",
+      "Armas controversas (minas antipessoais, munições de fragmentação, armas químicas e armas biológicas)",
+      "Cultivo e produção de tabaco",
+      "Setor dos combustíveis fósseis",
+      "Produção química",
+      "Violação de Direitos Humanos"
+    ]
+  }
+}

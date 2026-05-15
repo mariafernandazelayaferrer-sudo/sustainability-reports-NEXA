@@ -1,0 +1,213 @@
+{
+  "totalAssets": 18,
+  "note": "Inclui landbank. 14 ativos contam para GFA (excluindo 4 landbank).",
+  "totalGFA": {
+    "value": 243552.3,
+    "unit": "m²",
+    "note": "GFA total dos 14 ativos (excluindo landbank)"
+  },
+  "assets": [
+    {
+      "id": "fuse-valley",
+      "name": "FUSE VALLEY",
+      "type": "Escritórios / Comércio",
+      "area": 95000,
+      "areaUnit": "m²",
+      "city": "Matosinhos",
+      "district": "Porto",
+      "owner": "Icon SIC",
+      "status": "Em desenvolvimento"
+    },
+    {
+      "id": "spark",
+      "name": "SPARK",
+      "type": "Escritórios / Comércio",
+      "area": 17500,
+      "areaUnit": "m²",
+      "city": "Matosinhos",
+      "district": "Porto",
+      "owner": "Icon SIC",
+      "status": "Em construção"
+    },
+    {
+      "id": "spark-ii",
+      "name": "SPARK II",
+      "type": "Escritórios / Comércio",
+      "area": 17357,
+      "areaUnit": "m²",
+      "city": "Matosinhos",
+      "district": "Porto",
+      "owner": "Icon SIC",
+      "status": "Em operação"
+    },
+    {
+      "id": "la-movida",
+      "name": "LA MOVIDA",
+      "type": "Escritório",
+      "area": 1660,
+      "areaUnit": "m²",
+      "city": "Matosinhos",
+      "district": "Porto",
+      "owner": "Castro Capital SIC",
+      "status": "Em operação",
+      "certifications": ["LEED Gold"],
+      "note": "Ativo em transição: classificado como em construção no Cap. 2, por ter entrado em operação no final de 2025; e como certificado no Cap. 3, por ter obtido a certificação LEED no início de 2026."
+    },
+    {
+      "id": "bloom-living",
+      "name": "BLOOM LIVING",
+      "type": "Residencial",
+      "area": 67160,
+      "areaUnit": "m²",
+      "city": "Maia",
+      "district": "Porto",
+      "owner": "Castro Capital SIC",
+      "status": "Em desenvolvimento"
+    },
+    {
+      "id": "fitness-hut",
+      "name": "FITNESS HUT",
+      "type": "Comércio",
+      "area": 1785,
+      "areaUnit": "m²",
+      "city": "Braga",
+      "district": "Braga",
+      "owner": "Castro Capital SIC",
+      "status": "Em operação"
+    },
+    {
+      "id": "alverca",
+      "name": "ALVERCA",
+      "type": "Residencial",
+      "area": 55200,
+      "areaUnit": "m²",
+      "city": "Vila Franca de Xira",
+      "district": "Lisboa",
+      "owner": "Icon SIC",
+      "status": "Landbank"
+    },
+    {
+      "id": "aldi",
+      "name": "ALDI",
+      "type": "Indústria / Retalho",
+      "area": 1950,
+      "areaUnit": "m²",
+      "city": "Matosinhos",
+      "district": "Porto",
+      "owner": "Castro Capital SIC",
+      "status": "Em operação"
+    },
+    {
+      "id": "valongo",
+      "name": "VALONGO",
+      "type": "Retalho",
+      "area": 6000,
+      "areaUnit": "m²",
+      "city": "Valongo",
+      "district": "Porto",
+      "owner": "Icon SIC",
+      "status": "Em desenvolvimento"
+    },
+    {
+      "id": "lote-81-fuse-valley",
+      "name": "LOTE 81 FUSE VALLEY",
+      "type": "Residencial",
+      "area": 8000,
+      "areaUnit": "m²",
+      "city": "Matosinhos",
+      "district": "Porto",
+      "owner": "Icon SIC",
+      "status": "Em desenvolvimento"
+    },
+    {
+      "id": "cortinha",
+      "name": "CORTINHA",
+      "type": "Residencial",
+      "area": 48000,
+      "areaUnit": "m²",
+      "city": "Matosinhos",
+      "district": "Porto",
+      "owner": "Icon SIC",
+      "status": "Landbank"
+    },
+    {
+      "id": "the-breeze",
+      "name": "THE BREEZE",
+      "type": "Residencial",
+      "area": 11147,
+      "areaUnit": "m²",
+      "city": "Vila Nova de Gaia",
+      "district": "Porto",
+      "owner": "Castro Capital SIC",
+      "status": "Em construção"
+    },
+    {
+      "id": "villa-chloe",
+      "name": "VILLA CHLOE",
+      "type": "Residencial",
+      "area": 355,
+      "areaUnit": "m²",
+      "city": "Loulé",
+      "district": "Faro",
+      "owner": "Castro Capital SIC",
+      "status": "Em operação"
+    },
+    {
+      "id": "destaque-recarei",
+      "name": "DESTAQUE RECAREI",
+      "type": "Residencial",
+      "area": 9323,
+      "areaUnit": "m²",
+      "city": "Matosinhos",
+      "district": "Porto",
+      "owner": "Icon SIC",
+      "status": "Landbank",
+      "note": "Lote 6,7,8,9,10,11"
+    },
+    {
+      "id": "casa-do-rio",
+      "name": "CASA DO RIO",
+      "type": "Residencial",
+      "area": 7500,
+      "areaUnit": "m²",
+      "city": "Matosinhos",
+      "district": "Porto",
+      "owner": "Icon SIC",
+      "status": "Landbank"
+    },
+    {
+      "id": "valpark",
+      "name": "VALPARK",
+      "type": "Logística",
+      "area": 13200,
+      "areaUnit": "m²",
+      "city": "Valongo",
+      "district": "Porto",
+      "owner": "Icon SIC",
+      "status": "Em construção"
+    },
+    {
+      "id": "palacete-31-janeiro",
+      "name": "PALACETE 31 DE JANEIRO",
+      "type": "Escritório",
+      "area": 1207,
+      "areaUnit": "m²",
+      "city": "Braga",
+      "district": "Braga",
+      "owner": "Castro Capital SIC",
+      "status": "Em operação",
+      "note": "Sede operacional da Nexa. Utiliza contrato de energia com Garantias de Origem (GdO)."
+    },
+    {
+      "id": "moradia-de-fao",
+      "name": "MORADIA DE FÃO",
+      "type": "Residencial",
+      "area": 798,
+      "areaUnit": "m²",
+      "city": "Esposende",
+      "district": "Braga",
+      "owner": "Castro Capital SIC",
+      "status": "Em operação"
+    }
+  ]
+}

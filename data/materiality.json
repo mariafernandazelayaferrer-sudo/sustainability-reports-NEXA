@@ -1,0 +1,109 @@
+{
+  "title": "Análise de Dupla Materialidade",
+  "introduction": "No final de 2025, a Nexa iniciou o processo de análise de dupla materialidade, envolvendo os seus colaboradores com o objetivo de identificar os temas ESG mais relevantes para a organização. O envolvimento dos stakeholders internos e externos é fundamental de forma a garantir que os interesses dos colaboradores, dos investidores e participantes nos OIC sob gestão, se encontram devidamente alinhados com as prioridades estratégicas da empresa.",
+  "methodology": {
+    "perspectives": [
+      {
+        "name": "Inside-Out (Impacto)",
+        "description": "Analisa de que forma as operações da Nexa afetam o ambiente e a sociedade."
+      },
+      {
+        "name": "Outside-In (Financeira)",
+        "description": "Considera de que modo os problemas ambientais, sociais e de governação podem influenciar o desempenho financeiro da Nexa."
+      }
+    ],
+    "timeHorizons": [
+      {
+        "name": "Curto prazo",
+        "range": "até 1 ano"
+      },
+      {
+        "name": "Médio prazo",
+        "range": "2 a 5 anos"
+      },
+      {
+        "name": "Longo prazo",
+        "range": "superior a 5 anos"
+      }
+    ]
+  },
+  "themes": {
+    "environmental": {
+      "code": "E",
+      "name": "Environmental",
+      "topics": [
+        { "code": "E1", "name": "Alterações climáticas", "subtopics": ["E1.1 Energia e Emissões", "E1.2 Adaptação às alterações climáticas"] },
+        { "code": "E2", "name": "Poluição", "note": "Erosão e sedimentação, ruído e qualidade do ar" },
+        { "code": "E3", "name": "Recursos Hídricos / Uso eficiente da Água" },
+        { "code": "E4", "name": "Biodiversidade" },
+        { "code": "E5", "name": "Economia Circular / Gestão de Resíduos e Reciclagem" }
+      ],
+      "priorityVectors": [
+        "E1.1 Energia e Emissões",
+        "E1.2 Adaptação às Alterações Climáticas"
+      ],
+      "conclusion": "Para a Nexa enquanto sociedade gestora de organismos de investimento coletivo, os temas ambientais assumem materialidade sobretudo na dimensão financeira (Outside-In), refletindo a exposição indireta da entidade aos riscos climáticos e de transição através dos ativos sob gestão.",
+      "patterns": [
+        {
+          "name": "Risco de desvalorização de ativos",
+          "description": "A exposição a ativos com desempenho energético insuficiente ou baixa resiliência climática pode impactar o valor patrimonial, rendibilidade e atratividade junto de investidores institucionais."
+        },
+        {
+          "name": "Pressão regulatória e de mercado",
+          "description": "A crescente integração de critérios ESG no financiamento e na avaliação de risco bancário reforça a necessidade de monitorização ambiental estruturada dos ativos em carteira."
+        }
+      ]
+    },
+    "social": {
+      "code": "S",
+      "name": "Social",
+      "topics": [
+        { "code": "S1", "name": "Trabalhadores Internos", "subtopics": ["S1.1 Saúde e Segurança no Trabalho", "S1.2 Condições de trabalho e Bem-Estar", "S1.3 Formação e Desenvolvimento", "S1.4 Diversidade e inclusão"] },
+        { "code": "S2", "name": "Trabalhadores na Cadeia de valor / Direitos Humanos na cadeia de valor" },
+        { "code": "S3", "name": "Comunidades Afetadas / Comunidades locais e envolvimento social" },
+        { "code": "S4", "name": "Consumidores e Utilizadores Finais" }
+      ],
+      "priorityVectors": [
+        "S1.2 Condições de Trabalho e Bem-Estar",
+        "S2 Direitos Humanos na Cadeia de valor",
+        "S1.3 Formação e Desenvolvimento",
+        "S4 Consumidores e Utilizadores Finais"
+      ],
+      "conclusion": "Os temas sociais são materialmente relevantes na ótica de gestão fiduciária e de reputação institucional, refletindo a responsabilidade da Nexa na supervisão de ativos e parceiros operacionais.",
+      "patterns": [
+        {
+          "name": "Risco reputacional indireto",
+          "description": "Incidentes sociais associados a ativos, fornecedores ou colaboradores podem impactar diretamente a imagem da entidade gestora e a confiança dos investidores."
+        },
+        {
+          "name": "Governança social do portefólio",
+          "description": "A integração de critérios ESG nos processos de investimento e acompanhamento permite reduzir exposição a risco e reforçar credibilidade junto do mercado."
+        }
+      ]
+    },
+    "governance": {
+      "code": "G",
+      "name": "Governance",
+      "topics": [
+        { "code": "G1", "name": "Conduta Empresarial", "subtopics": ["G1.1 Segurança e qualidade dos edifícios", "G1.2 Proteção de dados e cibersegurança", "G1.3 Ética, integridade e compliance"] },
+        { "code": "G2", "name": "Inovação e digitalização" }
+      ],
+      "priorityVectors": [
+        "G1.3 Ética, integridade e compliance",
+        "G2 Inovação e digitalização",
+        "G1 Segurança e qualidade dos edifícios e projetos"
+      ],
+      "conclusion": "A governação assume materialidade estrutural elevada para a Nexa, refletindo o seu papel enquanto entidade regulada, responsável pela gestão de OIC.",
+      "patterns": [
+        {
+          "name": "Robustez regulatória e fiduciária",
+          "description": "Enquanto entidade regulada pela CMVM, a Nexa opera num ambiente de elevada exigência normativa. Falhas de compliance têm impacto financeiro e reputacional significativo."
+        },
+        {
+          "name": "Confiança e transparência junto de investidores",
+          "description": "A qualidade do reporte, gestão de risco e governance interna são determinantes para acesso a capital e retenção de investidores institucionais."
+        }
+      ]
+    }
+  }
+}

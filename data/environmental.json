@@ -1,0 +1,223 @@
+{
+  "title": "Environmental",
+  "energy": {
+    "title": "Energia",
+    "summary": "Em 2025, o consumo energético total dos ativos sob gestão dos OIC registou uma redução de 21,1% face ao ano anterior, totalizando 1.501,5 MWh (contra 1.902,5 MWh em 2024).",
+    "totalConsumption": {
+      "2025": { "value": 1501.5, "unit": "MWh" },
+      "2024": { "value": 1902.5, "unit": "MWh" },
+      "yoyChange": -21.1
+    },
+    "distributionByActivity": {
+      "2025": {
+        "operationByThirdParties": 60.1,
+        "operationByOIC": 30.6,
+        "construction": 9.3
+      }
+    },
+    "operationOIC": {
+      "label": "Operação (Gestão de OIC)",
+      "consumptionByType": {
+        "2025": { "electricity": 458.9, "electricityIntensity": 23.3 },
+        "2024": { "electricity": 651.3, "electricityIntensity": 33.0 }
+      },
+      "yoyChange": -29.5,
+      "intensityChange": -29.4,
+      "unit": "MWh",
+      "intensityUnit": "kWh/m²"
+    },
+    "operationThirdParties": {
+      "label": "Operação (Gestão por terceiros)",
+      "consumptionByType": {
+        "2025": {
+          "total": 902.5,
+          "electricity": 688.1,
+          "naturalGas": 214.4,
+          "electricityShare": 76.3,
+          "gasShare": 23.7,
+          "intensity": 241.6
+        }
+      },
+      "unit": "MWh",
+      "intensityUnit": "kWh/m²",
+      "note": "Estes dados correspondem a estimativas baseadas em informação histórica, não refletindo o consumo efetivo dos períodos, devido à falta de resposta dos inquilinos."
+    },
+    "construction": {
+      "label": "Construção",
+      "consumptionByType": {
+        "2025": { "electricity": 140.1, "diesel": 0, "electricityIntensity": 4.6 },
+        "2024": { "electricity": 103.3, "diesel": 245.4, "total": 348.7, "intensity": 11.3 }
+      },
+      "yoyChange": -59.8,
+      "unit": "MWh",
+      "intensityUnit": "kWh/m²",
+      "note": "Decréscimo explicado pela eliminação total do consumo de gasóleo em estaleiro, que em 2024 representava 245,4 MWh (70,4% do consumo de construção)."
+    },
+    "renewableEnergyShare": {
+      "2025": 17.2,
+      "2024": 19.9,
+      "unit": "%",
+      "label": "Contratos Verdes + Produção Fotovoltaica on-site"
+    }
+  },
+  "water": {
+    "title": "Água",
+    "totalConsumption": {
+      "2025": { "value": 9933, "unit": "m³" },
+      "2024": { "value": 11622, "unit": "m³" },
+      "yoyChange": -14.5
+    },
+    "distributionByActivity2025": {
+      "operationByThirdParties": 36.3,
+      "construction": 32.0,
+      "operationByOIC": 31.8
+    },
+    "operationOIC": {
+      "2025": { "value": 3176.2, "intensity": 0.1 },
+      "2024": { "value": 3350.3, "intensity": 0.1 },
+      "unit": "m³",
+      "intensityUnit": "m³/m²"
+    },
+    "operationThirdParties": {
+      "2025": { "value": 3602.0, "intensity": 1.0 },
+      "2024": { "value": 3602.0, "intensity": 0.2 },
+      "unit": "m³",
+      "intensityUnit": "m³/m²",
+      "note": "Estimativas baseadas em informação histórica devido à falta de resposta dos inquilinos."
+    },
+    "construction": {
+      "2025": { "value": 3155.0, "intensity": 0.2 },
+      "2024": { "value": 4670.0, "intensity": 0.2 },
+      "unit": "m³",
+      "intensityUnit": "m³/m²",
+      "yoyChange": -32.4,
+      "byAsset2025": [
+        { "name": "SPARK", "value": 2119.2, "unit": "m³", "yoyChange": 0.3 },
+        { "name": "The Breeze", "value": 980.0, "unit": "m³", "yoyChange": -20.8 },
+        { "name": "La Movida", "value": 77.0, "unit": "m³" }
+      ]
+    },
+    "waterReused": {
+      "2025": 0.0,
+      "unit": "%",
+      "note": "Nenhum dos Ativos possui capacidade relevante de reutilização de água."
+    }
+  },
+  "waste": {
+    "title": "Resíduos",
+    "distribution2025": {
+      "construction": 99.2,
+      "operationByOIC": 0.8
+    },
+    "production": {
+      "operationByOIC": {
+        "2025": { "value": 3.1, "intensity": 0.2, "unit": "Ton", "intensityUnit": "kg/m²/ano" },
+        "2024": { "value": 3.1, "intensity": 2.0, "unit": "Ton", "intensityUnit": "kg/m²/ano" }
+      },
+      "construction": {
+        "2025": { "value": 387.0, "intensity": 12.6, "unit": "Ton", "intensityUnit": "kg/m²/ano" },
+        "2024": { "value": 294.8, "intensity": 9.6, "unit": "Ton", "intensityUnit": "kg/m²/ano" }
+      }
+    },
+    "valorizationRate": {
+      "2025": 97.3,
+      "unit": "%",
+      "note": "100% dos resíduos de construção são encaminhados para valorização."
+    },
+    "recoveryRate": {
+      "2025": 57.2,
+      "unit": "%",
+      "method": "Separação seletiva por ecopontos e recolha seletiva de cápsulas"
+    },
+    "wasteByTypeOIC2025": {
+      "rsuEcopontoCinza": { "value": 1.2, "unit": "Ton", "intensity": 0.7, "intensityUnit": "kg/m²" },
+      "ecopontoAmarelo": { "value": 0.1, "unit": "Ton", "intensity": 0.1, "intensityUnit": "kg/m²" },
+      "ecopontoAzul": { "value": 0.6, "unit": "Ton", "intensity": 0.4, "intensityUnit": "kg/m²" },
+      "ecopontoVerde": { "value": 0.2, "unit": "Ton", "intensity": 0.1, "intensityUnit": "kg/m²" },
+      "capsulasEOutros": { "value": 0.5, "unit": "Ton", "intensity": 0.3, "intensityUnit": "kg/m²" },
+      "organicos": { "value": 0.3, "unit": "Ton", "intensity": 0.2, "intensityUnit": "kg/m²" }
+    }
+  },
+  "mobility": {
+    "title": "Mobilidade",
+    "fleet": {
+      "totalVehicles": 6,
+      "electric": 4,
+      "diesel": 2,
+      "electricShare": 66.7,
+      "dieselShare": 33.3,
+      "unit": "%"
+    },
+    "kilometers": {
+      "2025": { "electric": 65603, "diesel": 34422, "total": 100025 },
+      "2024": { "electric": 12373, "diesel": 34176, "total": 46549 },
+      "unit": "km"
+    },
+    "avoidedEmissions": {
+      "value": 59.9,
+      "unit": "%",
+      "tonCO2eAvoided": 14.1,
+      "note": "Se os VE fossem a gasóleo, as emissões da frota Nexa seriam aproximadamente 150% superiores."
+    }
+  },
+  "emissions": {
+    "title": "Scope 1, 2 e 3",
+    "definitions": {
+      "scope1": "Inclui todas as emissões diretas de GEE provenientes de fontes que são detidas ou controladas pela Nexa e os ativos sob gestão das OIC, nomeadamente da frota interna, equipamentos ou fugas de gases.",
+      "scope2": "Emissões indiretas resultantes da geração de eletricidade, aquecimento, arrefecimento ou vapor.",
+      "scope3": "Todas as outras emissões indiretas que ocorrem a montante e a jusante das atividades da empresa, mas que não estão sob o seu controlo direto."
+    },
+    "scope1": {
+      "total2025": { "value": 8.1, "unit": "TonCO₂e", "intensity": 0.12, "intensityUnit": "kgCO2/m²", "shareOfTotal": 2.4 },
+      "total2024": { "value": null },
+      "bySource2025": {
+        "fleet": { "value": 8.1, "share": 100.0 },
+        "dieselSiteWork": { "value": 0.0, "share": 0.0 },
+        "refrigerantLeaks": { "value": 0.0, "share": 0.0 }
+      }
+    },
+    "scope2": {
+      "total2025": { "value": 21.9, "unit": "TonCO₂e", "intensity": 0.32, "intensityUnit": "kgCO2/m²", "shareOfTotal": 6.4 },
+      "bySource2025": {
+        "electricityConstruction": { "value": 21.9, "share": 100.0 },
+        "electricityOperation": { "value": 0.0, "share": 0.0 }
+      },
+      "note": "Palacete 31 de Janeiro (sede da Nexa) utiliza um contrato de energia com Garantias de Origem (GdO)."
+    },
+    "scope3": {
+      "total2025": { "value": 312.6, "unit": "TonCO₂e", "shareOfTotal": 91.3 },
+      "bySource2025": {
+        "purchasesTransportsWaste": { "value": 170.8, "unit": "TonCO₂e", "share": 49.9, "categories": "Cat. 1+4+5" },
+        "assetsOperatedThirdParties": { "value": 138.7, "unit": "TonCO₂e", "share": 40.5, "category": "Cat. 13" },
+        "commuting": { "value": 1.6, "unit": "TonCO₂e", "share": 0.5 },
+        "businessTravel": { "value": 1.5, "unit": "TonCO₂e", "share": 0.4 }
+      },
+      "travel2025": {
+        "plane": 1.5,
+        "train": 0.0,
+        "personalCar": 0.0,
+        "taxiAndOthers": 0.0,
+        "unit": "TonCO₂e"
+      },
+      "commuting2025": {
+        "car": 1.6,
+        "bus": 0.0,
+        "bike": 0.0,
+        "walk": 0.0,
+        "carpool": 0.0,
+        "unit": "TonCO₂e"
+      }
+    },
+    "total2025": {
+      "value": 342.6,
+      "unit": "TonCO₂e",
+      "intensity": 5.1,
+      "intensityUnit": "kgCO2e/m²/ano"
+    },
+    "offsetEmissions": {
+      "2025": 5.0,
+      "unit": "%",
+      "note": "As GdO do Palacete 31 de Janeiro compensam 18,2 TonCO₂e. Sem GdO, o total seria 360,8 TonCO₂e."
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "terms": [
+    {
+      "abbreviation": "SGOIC",
+      "fullName": "Sociedade Gestora de Organismos de Investimento Coletivo"
+    },
+    {
+      "abbreviation": "SIC",
+      "fullName": "Sociedade de Investimento Coletivo",
+      "definition": "Entidade com forma societária que investe capital de vários investidores em ativos diversificados."
+    },
+    {
+      "abbreviation": "FII",
+      "fullName": "Sistema de Fundos de Investimento Imobiliário",
+      "definition": "Organismos de investimento alternativo (OIA) imobiliários que assumem uma forma contratual, não tendo personalidade jurídica própria distinta da entidade gestora, e podendo ser estruturados como fundos abertos ou fechados, consoante o regime de subscrição e resgate das unidades de participação."
+    },
+    {
+      "abbreviation": "CMVM",
+      "fullName": "Comissão do Mercado de Valores Mobiliários"
+    },
+    {
+      "abbreviation": "OIC",
+      "fullName": "Organismos de Investimento Coletivo",
+      "definition": "São instituições que se destinam ao investimento, dos capitais obtidos junto dos investidores, de acordo com uma determinada política de investimento."
+    },
+    {
+      "abbreviation": "BTR",
+      "fullName": "Build to Rent",
+      "definition": "Desenvolvimento residencial construído para arrendamento institucional, oferecendo unidades com gestão profissional e serviços integrados."
+    },
+    {
+      "abbreviation": "OIA",
+      "fullName": "Organismo de Investimento Alternativo",
+      "definition": "É um OIC que aplica os recursos dos seus investidores em ativos imobiliários. Os OIA Imobiliários podem ser divididos em: as SIC, que assumem uma forma societária e os Fundos de Investimento Imobiliário (FII), que assumem uma forma contratual e podem ser abertos ou fechados."
+    },
+    {
+      "abbreviation": "LBCFT",
+      "fullName": "Lei de Branqueamento de Capitais e ao Financiamento do Terrorismo"
+    },
+    {
+      "abbreviation": "ESG",
+      "fullName": "Environmental, Social and Governance"
+    },
+    {
+      "abbreviation": "GEE",
+      "fullName": "Gases com Efeito de Estufa"
+    },
+    {
+      "abbreviation": "GdO",
+      "fullName": "Garantias de Origem"
+    },
+    {
+      "abbreviation": "GFA",
+      "fullName": "Gross Floor Area"
+    },
+    {
+      "abbreviation": "GTC",
+      "fullName": "Gestão Técnica Centralizada"
+    },
+    {
+      "abbreviation": "OPR",
+      "fullName": "Owner's Project Requirements"
+    },
+    {
+      "abbreviation": "DAP",
+      "fullName": "Declaração Ambiental de Produto"
+    },
+    {
+      "abbreviation": "LCA",
+      "fullName": "Life Cycle Assessment / Análise do Ciclo de Vida"
+    },
+    {
+      "abbreviation": "CSDDD",
+      "fullName": "Corporate Sustainability Due Diligence Directive"
+    },
+    {
+      "abbreviation": "SFDR",
+      "fullName": "Sustainable Finance Disclosure Regulation",
+      "definition": "Regulamento (UE) 2019/2088 do Parlamento Europeu e do Conselho de 27 de novembro de 2019."
+    },
+    {
+      "abbreviation": "RGPD",
+      "fullName": "Regulamento Geral sobre a Proteção de Dados (UE) 2016/679"
+    },
+    {
+      "abbreviation": "LEED",
+      "fullName": "Leadership in Energy and Environmental Design",
+      "definition": "Programa de construção sustentável desenvolvido pelo U.S. Green Building Council®."
+    },
+    {
+      "abbreviation": "BREEAM",
+      "fullName": "Building Research Establishment Environmental Assessment Method"
+    },
+    {
+      "abbreviation": "RSU",
+      "fullName": "Resíduos Sólidos Urbanos"
+    },
+    {
+      "abbreviation": "OEP",
+      "fullName": "Outros Entes Públicos"
+    },
+    {
+      "abbreviation": "EBITDA",
+      "fullName": "Earnings Before Interest, Taxes, Depreciation and Amortization"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "title": "Economic",
+  "currency": "EUR",
+  "valueGenerated": {
+    "title": "Valor Económico Gerado",
+    "2025": 2233880.2,
+    "2024": 17601488.6,
+    "unit": "€",
+    "summary": "O valor económico gerado consolidado apresentou uma redução significativa, passando de 17.601.488,6 € em 2024 para 2.233.880,2 € em 2025. Esta evolução resulta essencialmente da diminuição das receitas operacionais no período."
+  },
+  "ebitda": {
+    "title": "EBITDA",
+    "2025": -2426063.9,
+    "2024": -411146.7,
+    "unit": "€",
+    "valuesInMillions": {
+      "2025": -2.43,
+      "2024": -0.41
+    },
+    "summary": "Em 2025, o EBITDA consolidado registou uma deterioração face ao exercício anterior, passando de -411.146,7 € em 2024 para -2.426.063,9 € em 2025. Esta evolução reflete um contexto de maior pressão sobre o desempenho operacional do Grupo."
+  },
+  "servicesRevenue": {
+    "title": "Prestação de Serviços",
+    "2025": 2055470.2,
+    "2024": 3496552.6,
+    "unit": "€",
+    "valuesInMillions": {
+      "2025": 2.06,
+      "2024": 3.50
+    },
+    "yoyChange": -41.2,
+    "summary": "As receitas provenientes de prestações de serviço registaram uma diminuição de 41,2%."
+  },
+  "valueDistributed": {
+    "title": "Valor Económico Distribuído",
+    "total": {
+      "2025": 8249327.2,
+      "2024": 3412533.1,
+      "unit": "€",
+      "valuesInMillions": {
+        "2025": 8.25,
+        "2024": 3.41
+      }
+    },
+    "breakdown": {
+      "personnel": {
+        "2025M": 0.36,
+        "2024M": 0.09,
+        "note": "O valor registado em 2024 não corresponde a um ano completo de atividade."
+      },
+      "financiers": {
+        "2025M": 0.00,
+        "2024M": 0.00
+      },
+      "suppliersAndOpex": {
+        "2025": 7357040.1,
+        "2024": 2649763.3,
+        "2025M": 7.36,
+        "2024M": 2.65
+      },
+      "stateAndOEP": {
+        "2025": 535092.6,
+        "2024": 672101.4,
+        "2025M": 0.54,
+        "2024M": 0.67
+      }
+    }
+  },
+  "valueAccumulated": {
+    "title": "Valor Económico Acumulado",
+    "2025": -6015446.9,
+    "2024": 14188955.5,
+    "unit": "€",
+    "valuesInMillions": {
+      "2025": -6.02,
+      "2024": 14.19
+    },
+    "summary": "Apresentou uma inversão significativa, passando de 14.188.955,5 € positivos em 2024 para -6.015.446,9 € em 2025. Esta evolução resulta do desfasamento entre o valor económico gerado e o valor económico distribuído."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "funds": [
+    {
+      "id": "icon-sic",
+      "name": "Icon SIC",
+      "fullName": "Icon SIC Imobiliária Fechada, S.A.",
+      "type": "SIC",
+      "typeDescription": "Sociedade de Investimento Imobiliário de Capital Fixo",
+      "regulator": "CMVM",
+      "managementStart": "Abril 2025",
+      "strategy": "BTR (Build to Rent) - Ativos de rendimento premium",
+      "description": "A Icon SIC é uma Sociedade de Investimento Imobiliário de Capital Fixo, criada com o propósito de assegurar uma gestão transparente e estruturada de ativos de rendimento premium BTR - Build to Rent, o que inclui o desenvolvimento destinado a promover ativos de rendimento. No seu âmbito de atuação, embora de forma residual, é admitida ainda a atividade de desenvolvimento e promoção de ativos para venda. Regulada pela CMVM, permite o acesso a parcerias com investidores institucionais e qualificados, promovendo uma abordagem de longo prazo, otimizada do ponto de vista financeiro e fiscal.",
+      "portfolio": {
+        "totalAssets": 10,
+        "breakdown": {
+          "inOperation": 1,
+          "underConstruction": 2,
+          "inDevelopment": 3,
+          "landbank": 4
+        }
+      }
+    },
+    {
+      "id": "fuse-valley-fii",
+      "name": "Fuse Valley FII",
+      "fullName": "Fuse Valley, FII",
+      "type": "FII",
+      "typeDescription": "Fundo de Investimento Imobiliário (fundo fechado de subscrição particular)",
+      "regulator": "CMVM",
+      "managementStart": "Janeiro 2025",
+      "strategy": "Valorização de capital através do desenvolvimento imobiliário",
+      "description": "O Fundo Fuse Valley foi concebido para investidores que procuram valorização de capital através do desenvolvimento imobiliário, beneficiando de uma estratégia focada e de longo prazo. O Fundo centra a sua atuação no projeto \"Fuse Valley\", localizado no Grande Porto (Matosinhos), investindo na aquisição, promoção e gestão de ativos imobiliários, com uma abordagem estruturada, sustentável e alinhada com as melhores práticas de mercado.",
+      "pillars": [
+        {
+          "name": "Bem-Estar",
+          "description": "Promoção da saúde, qualidade ambiental (luz, ar, ruído) e relação entre utilizadores e espaços."
+        },
+        {
+          "name": "Inovação",
+          "description": "Utilização de materiais e sistemas construtivos avançados e soluções tecnológicas de gestão orientadas para a eficiência, sustentabilidade e melhoria da experiência dos utilizadores."
+        }
+      ]
+    },
+    {
+      "id": "castro-capital-sic",
+      "name": "Castro Capital SIC",
+      "fullName": "Castro Red Capital – SIC Imobiliária Fechada, S.A.",
+      "type": "SIC",
+      "typeDescription": "Sociedade de Investimento Imobiliário de Capital Fixo",
+      "regulator": "CMVM",
+      "managementStart": "Outubro 2024",
+      "strategy": "Valorização sustentada do capital e gestão eficiente de ativos imobiliários (360 graus)",
+      "description": "A Castro Capital SIC está estrategicamente vocacionada para investidores que procuram a valorização sustentada do capital e uma gestão eficiente de ativos imobiliários. Com uma abordagem integrada de 360 graus, analisamos o potencial de cada imóvel, definindo estratégias de longo prazo orientadas para a maximização do seu valor e da respetiva rentabilidade. Todo o processo é assegurado por uma equipa qualificada, garantindo decisões informadas e uma estrutura de capitais otimizada, reforçando a estabilidade e a resiliência do investimento.",
+      "portfolio": {
+        "totalAssets": 8,
+        "breakdown": {
+          "inOperation": 6,
+          "underConstruction": 1,
+          "inDevelopment": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "title": "Governance",
+  "overview": "A sociedade gestora desenvolveu um Manual de Políticas e Procedimentos internos, aplicável a todos os processos, funções e colaboradores, que constitui o documento de referência para a sua governação. Este manual pauta a atuação da organização com base nos princípios de integridade, transparência e profissionalismo, assegurando o cumprimento da legislação e regulamentação aplicáveis.",
+  "pillars": [
+    {
+      "name": "Conduta e Integridade",
+      "description": "Define as regras de comportamento, os mecanismos de controlo interno e a gestão de conflitos de interesses."
+    },
+    {
+      "name": "Conformidade Regulatória",
+      "description": "Abrange as obrigações legais específicas decorrentes da atividade de sociedade gestora de OIC regulada pela CMVM, nomeadamente a prevenção do branqueamento de capitais, a proteção de dados e o tratamento de reclamações."
+    },
+    {
+      "name": "Estratégia e Risco",
+      "description": "Descreve como a organização gere os riscos e integra os princípios de sustentabilidade nas suas decisões de investimento."
+    }
+  ],
+  "conductAndIntegrity": {
+    "ethicsAndConduct": {
+      "title": "Código de Ética e Conduta",
+      "description": "A atividade é pautada pelos princípios de competência, integridade e profissionalismo. Previamente ao início de funções, todos os colaboradores recebem e subscrevem o Código de Ética e Conduta, comprometendo-se ao seu cumprimento no exercício das suas responsabilidades. No domínio da prevenção da corrupção e suborno, os procedimentos internos estabelecem regras de conduta para todos os colaboradores, incluindo mecanismos de controlo de transações pessoais e reporte de ocorrências.",
+      "antiCorruptionRecord2025": "Em 2025, não foram registadas quaisquer condenações nem coimas por violação de legislação anticorrupção ou antissuborno."
+    },
+    "compliance": {
+      "title": "Compliance",
+      "description": "A política e procedimento de compliance (cumprimento normativo) visam definir as normas e procedimentos internos, aplicáveis a todas as áreas de atividade e colaboradores da Nexa com o intuito da sociedade zelar pelo cumprimento da legislação e regulamentação aplicáveis. É nomeado um Compliance Officer, autónomo e independente das unidades operacionais.",
+      "principles": ["proporcionalidade", "autonomia", "monitorização contínua"]
+    },
+    "conflictsOfInterest": {
+      "title": "Gestão de conflitos de interesses",
+      "description": "A atividade de gestão de OIC pauta-se pelo princípio da prevalência do interesse dos investidores sobre o interesse da sociedade gestora. A política tem em vista a prevenção, identificação, gestão e mitigação de potenciais ou efetivas situações de conflito."
+    }
+  },
+  "regulatoryCompliance": {
+    "bcft": {
+      "title": "Prevenção e combate ao BCFT",
+      "description": "Enquanto sociedade gestora de OIC, é legalmente qualificada como entidade financeira obrigada ao cumprimento dos deveres preventivos do branqueamento de capitais e financiamento do terrorismo, nos termos da LBCFT, estando sujeita à supervisão da CMVM. Os procedimentos internos abrangem deveres de identificação e diligência, monitorização das relações de negócio, comunicação de operações suspeitas e dever de formação de todos os colaboradores nestas matérias."
+    },
+    "dataProtection": {
+      "title": "Privacidade e proteção de dados",
+      "regulations": ["Regulamento (UE) 2016/679 (RGPD)", "Lei n.º 58/2019"],
+      "description": "Foi estabelecida uma política de privacidade e proteção de dados que define os princípios e regras aplicáveis a todos os colaboradores e membros dos órgãos sociais."
+    },
+    "complaints": {
+      "title": "Reclamações dos clientes",
+      "channels": [
+        "Livro de reclamações",
+        "Correio eletrónico com recibo de receção e leitura",
+        "Carta registada com aviso de receção"
+      ],
+      "process": {
+        "analysisBy": "Compliance Officer",
+        "analysisDeadline": "10 dias úteis",
+        "finalResponseDeadline": "30 dias úteis",
+        "recurseTo": "CMVM",
+        "retentionPeriod": "5 anos"
+      }
+    }
+  },
+  "strategyAndRisk": {
+    "riskManagement": {
+      "title": "Gestão do risco",
+      "description": "A Política de Gestão de Riscos constitui um dos principais pilares da governação e desenvolvimento da atividade, estabelecendo os procedimentos necessários para avaliar e monitorizar a exposição aos riscos de mercado, de liquidez, de contraparte e operacionais.",
+      "reviewFrequency": "pelo menos uma vez por ano",
+      "riskTypes": ["mercado", "liquidez", "contraparte", "operacionais"]
+    },
+    "sustainability": {
+      "title": "Sustentabilidade",
+      "description": "A Política de Sustentabilidade descreve a forma como a organização integra os critérios ESG na sua atuação enquanto entidade gestora de OIC e na estratégia de investimento dos ativos sob gestão.",
+      "principles": ["compromisso", "proporcionalidade", "transparência", "integridade da informação"],
+      "explicitlyRejects": "práticas de greenwashing",
+      "boardResponsibility": "O Conselho de Administração é o órgão responsável pela aprovação e atualização desta Política, supervisionando a integração dos princípios ESG nas decisões de investimento.",
+      "esgOfficer": "Foi nomeado um Responsável ESG, com funções de monitorização da estratégia, integração dos princípios ESG nos processos de decisão e avaliação dos impactos da atividade no domínio da sustentabilidade."
+    },
+    "excludedInvestments": {
+      "title": "Investimentos excluídos",
+      "list": [
+        "armas controversas",
+        "cultivo e produção de tabaco",
+        "setor dos combustíveis fósseis",
+        "produção química (pesticidas e agroquímicos)",
+        "corrupção, branqueamento de capitais e financiamento do terrorismo",
+        "trabalho forçado e trabalho infantil",
+        "pornografia e prostituição",
+        "violação de direitos humanos",
+        "materiais radioativos, exceto para fins medicinais"
+      ]
+    }
+  }
+}

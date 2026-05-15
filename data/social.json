@@ -1,0 +1,94 @@
+{
+  "title": "Social",
+  "internalWorkers": {
+    "title": "Trabalhadores da empresa",
+    "employees": {
+      "2025": { "total": 10, "women": 3, "men": 7 },
+      "2024": { "total": 9, "women": 3, "men": 6 }
+    },
+    "turnover": {
+      "2025": 0.0,
+      "unit": "%",
+      "newHires2025": 1,
+      "note": "Refletindo uma ausência total de saídas de colaboradores durante o período."
+    },
+    "wages": {
+      "averageSalary": {
+        "2025": { "value": 2686.8, "currency": "EUR" },
+        "2024": { "value": 2734.9, "currency": "EUR" }
+      },
+      "minimumWage": {
+        "2025": { "value": 870.0, "currency": "EUR" },
+        "2024": { "value": 820.0, "currency": "EUR" }
+      },
+      "aboveMinimumWageRate": {
+        "2025": 100,
+        "unit": "%"
+      },
+      "averageVsMinimumMultiplier": 3.1,
+      "note": "Salário médio dos colaboradores situa-se em 3,1 vezes acima do salário mínimo nacional."
+    },
+    "byCategory2025": [
+      { "category": "Administração", "women": 2, "men": 2 },
+      { "category": "Direção", "women": 1, "men": 1 },
+      { "category": "Gestão", "women": 0, "men": 2 },
+      { "category": "Técnico", "women": 0, "men": 2 }
+    ],
+    "genderPayGap": {
+      "global": { "2025": 37.1, "2024": 35.5, "unit": "%" },
+      "byCategory2025": {
+        "administracao": 0.0,
+        "unit": "%"
+      },
+      "note": "Em 2025, a Nexa registou uma diferença de 37,1% na remuneração média horária bruta global entre trabalhadores masculinos e femininos. Na função de Administração, não se verificam disparidades remuneratórias entre géneros. Nas restantes funções, a ausência de diversidade de género limita a análise comparativa."
+    },
+    "performanceBonus": {
+      "2025": 90.0,
+      "2024": 88.9,
+      "unit": "%",
+      "note": "10,0% restantes resultam da elegibilidade uma vez que não são elegíveis os colaboradores no ano de entrada."
+    },
+    "training": {
+      "employeesWithTraining": {
+        "2025": 70.0,
+        "2024": 100.0,
+        "unit": "%"
+      },
+      "hoursPerPerson": {
+        "2025": 28.6,
+        "2024": 98.0,
+        "unit": "h/pessoa"
+      },
+      "totalHours": {
+        "2025": 286.0,
+        "2024": 882.0,
+        "unit": "h"
+      },
+      "measuredHours": {
+        "2025": 40.9,
+        "2024": 98.0,
+        "unit": "h"
+      },
+      "note": "Resultado reflete uma fase de consolidação organizacional, com foco em ações formativas mais especializadas e alinhadas com necessidades específicas da estrutura já estabilizada."
+    }
+  },
+  "valueChainWorkers": {
+    "title": "Trabalhadores na cadeia de valor",
+    "humanRights": {
+      "title": "Direitos Humanos na Cadeia de valor",
+      "esgCodeOfConductTopics": [
+        "Trabalho forçado",
+        "Trabalho infantil",
+        "Discriminação e diversidade",
+        "Legalidade dos trabalhadores para operar no país",
+        "Salários dignos e conformes com os requisitos legais",
+        "Horários de trabalho e compensações legais",
+        "Liberdade sindical",
+        "Segurança e higiene no trabalho"
+      ],
+      "context": "Em 2025, a Nexa desenvolveu um Código de Conduta ESG, sob a forma de questionário dirigido aos seus fornecedores, com o objetivo de identificar possíveis incumprimentos do dever de diligência ao longo da cadeia de valor.",
+      "csdddNote": "A CSDDD (Corporate Sustainability Due Diligence Directive) aplica-se diretamente a empresas com mais de 5.000 trabalhadores e volume de negócios superior a 1.500 milhões de euros, limiares que o Grupo não atinge. Contudo, as empresas abrangidas pela diretiva são obrigadas a estender o dever de diligência a toda a sua cadeia de valor, o que significa que clientes de maior dimensão poderão exigir, progressivamente, evidências de conformidade aos parceiros com quem operam.",
+      "implementation": "O questionário foi implementado em regime piloto num projeto em construção, tendo sido aplicado à totalidade dos subempreiteiros envolvidos na obra. A taxa de resposta ficou aquém do esperado, revelando que a extensão e complexidade do instrumento constituíram uma barreira à adesão, aspeto que será ajustado nas próximas iterações."
+    }
+  }
+}

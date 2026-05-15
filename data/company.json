@@ -1,0 +1,67 @@
+{
+  "name": "Nexa SGOIC, S.A.",
+  "shortName": "Nexa",
+  "type": "Sociedade Gestora de Organismos de Investimento Coletivo",
+  "typeShort": "SGOIC",
+  "regulator": "CMVM (Comissão do Mercado de Valores Mobiliários)",
+  "regulatoryStatus": "Autorização para o exercício da atividade como sociedade gestora de grande dimensão (agosto 2025)",
+  "founded": "Outubro 2024",
+  "tagline": "Connect, Invest, Build the future.",
+  "mission": "Gerir veículos de investimento regulados (OIC) de forma eficiente, transparente e personalizada, com foco na criação de valor sustentável para os investidores.",
+  "vision": "Ser uma referência no mercado de gestão de ativos e investimentos imobiliários, antecipando tendências de mercado e implementando modelos de negócio disruptivos que visam um futuro mais sustentável.",
+  "values": [
+    {
+      "name": "Ética",
+      "description": "Conduzir todas as ações com integridade, promovendo os valores da confiança, transparência e respeito, através de práticas responsáveis e justas."
+    },
+    {
+      "name": "Inovação",
+      "description": "Aplicar tecnologias avançadas e modelos diferenciados para oferecer soluções alinhadas com as tendências do mercado."
+    },
+    {
+      "name": "Sustentabilidade",
+      "description": "Alavancar o crescimento dos investimentos com responsabilidade económica, social e ambiental, assegurando um impacto positivo a longo prazo."
+    },
+    {
+      "name": "Compromisso",
+      "description": "Atuar com dedicação e responsabilidade, com foco na concretização dos objetivos financeiros dos clientes."
+    },
+    {
+      "name": "Excelência",
+      "description": "Garantir resultados de alta qualidade, com gestão rigorosa, garantindo eficiência e superação das expectativas dos investidores."
+    }
+  ],
+  "keyMetrics": {
+    "assetsUnderManagement": {
+      "value": 198,
+      "unit": "M€",
+      "label": "Ativos na carteira dos OIC em gestão"
+    },
+    "employees": 10,
+    "citiesOfOperation": 8,
+    "fundsUnderManagement": 3,
+    "totalAssets": 18,
+    "totalAssetsNote": "incluindo landbank"
+  },
+  "cities": [
+    "Braga",
+    "Esposende",
+    "Porto",
+    "Matosinhos",
+    "Valongo",
+    "Vila Nova de Gaia",
+    "Maia",
+    "Vila Franca de Xira",
+    "Lisboa",
+    "Loulé",
+    "Faro"
+  ],
+  "certifications": [
+    {
+      "name": "LEED Gold®",
+      "asset": "La Movida",
+      "system": "LEED® for Building Design and Construction: New Construction",
+      "issuer": "U.S. Green Building Council®"
+    }
+  ]
+}

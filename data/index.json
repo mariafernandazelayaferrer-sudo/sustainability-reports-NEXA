@@ -1,0 +1,20 @@
+{
+  "description": "Índice de los archivos JSON estructurados extraídos del Relatório de Sustentabilidade 2025 de Nexa.",
+  "files": [
+    { "file": "metadata.json", "description": "Metadatos del informe (título, año, idioma, secciones)" },
+    { "file": "company.json", "description": "Información de la empresa Nexa: misión, visión, valores, métricas clave" },
+    { "file": "board-message.json", "description": "Mensaje del Board (Conselho de Administração)" },
+    { "file": "funds.json", "description": "Los 3 fondos bajo gestión: Icon SIC, Fuse Valley FII, Castro Capital SIC" },
+    { "file": "assets.json", "description": "Los 18 activos inmobiliarios en cartera" },
+    { "file": "people.json", "description": "Equipo: Board y departamentos" },
+    { "file": "materiality.json", "description": "Análisis de Doble Materialidad ESG" },
+    { "file": "esg-targets.json", "description": "Métricas y metas ESG, sectores excluidos" },
+    { "file": "environmental.json", "description": "Métricas ambientales: energía, agua, residuos, movilidad, emisiones Scope 1/2/3" },
+    { "file": "social.json", "description": "Métricas sociales: trabajadores, salarios, formación, derechos humanos" },
+    { "file": "governance.json", "description": "Gobernanza: conducta, compliance, gestión de riesgos, sostenibilidad" },
+    { "file": "economic.json", "description": "Métricas económicas: valor generado, EBITDA, distribución" },
+    { "file": "future-perspectives.json", "description": "Perspectivas futuras: certificación, plan climático 2025-2030" },
+    { "file": "final-considerations.json", "description": "Considerações Finais de Fernanda Zelaya" },
+    { "file": "glossary.json", "description": "Glosario de términos y abreviaturas" }
+  ]
+}

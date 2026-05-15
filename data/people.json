@@ -1,0 +1,101 @@
+{
+  "intro": "Na Nexa, reconhecemos que as pessoas constituem o principal vetor de criação de valor sustentável. A sustentabilidade é integrada de forma transversal na nossa estratégia e no modelo de gestão, orientando a identificação de riscos associados aos investimentos e, simultaneamente, a captação de oportunidades que promovam valor a longo prazo para investidores, parceiros e demais stakeholders. A concretização desta visão é assegurada por uma equipa altamente especializada, com profundo know-how em gestão de ativos e enquadramento regulatório, que atua com rigor técnico, ética profissional e alinhamento com as melhores práticas do setor.",
+  "board": {
+    "name": "Conselho de Administração (Board)",
+    "responsibility": "Supervisionar os procedimentos de controlo interno, incluindo a definição da estratégia em matéria de sustentabilidade.",
+    "members": [
+      {
+        "name": "Paulo Castro",
+        "role": "Chairman"
+      },
+      {
+        "name": "Luis Quinta",
+        "role": "Board Member - Asset Management & Investment"
+      },
+      {
+        "name": "Fátima Teixeira",
+        "role": "Board Member - Finance"
+      },
+      {
+        "name": "Raquel Fonseca",
+        "role": "Board Member - Legal & Internal Control"
+      }
+    ]
+  },
+  "departments": [
+    {
+      "name": "Compliance / BCFT",
+      "responsibilities": [
+        "Acompanhar e avaliar regularmente a adequação e a eficácia das políticas, procedimentos e medidas adotados pela empresa bem como das ações tomadas para corrigir eventuais deficiências no cumprimento dos deveres da sociedade",
+        "Aconselhar e assistir às pessoas relevantes responsáveis pela prestação de serviços e de atividades no cumprimento dos deveres da sociedade"
+      ],
+      "members": [
+        {
+          "name": "Lisandra Roupar",
+          "role": "Compliance Officer"
+        }
+      ]
+    },
+    {
+      "name": "Gestão de Risco",
+      "responsibilities": [
+        "Assegurar a deteção e avaliação sistemática de riscos decorrentes com impacto potencial nos investimentos realizados em nome dos OIC sob sua gestão."
+      ],
+      "members": [
+        {
+          "name": "Vanda Bastos",
+          "role": "Risk Management Technician"
+        }
+      ]
+    },
+    {
+      "name": "Financeiro e Suporte",
+      "responsibilities": [
+        "Assegurar a gestão financeira da sociedade e dos veículos sob gestão, garantindo rigor, transparência e conformidade com os requisitos legais e regulamentares aplicáveis",
+        "Monitorizar o desempenho económico-financeiro, integrando critérios de sustentabilidade na análise e reporte",
+        "Assegurar o suporte administrativo e operacional às atividades da sociedade, garantindo a correta execução de procedimentos internos e o cumprimento das obrigações documentais e regulatórias"
+      ],
+      "members": [
+        {
+          "name": "Carolina Oliveira",
+          "role": "Head of Finance"
+        },
+        {
+          "name": "Bárbara Vieira",
+          "role": "Finance Technician"
+        },
+        {
+          "name": "Gabriela Santos",
+          "role": "Backoffice"
+        }
+      ]
+    },
+    {
+      "name": "Operações & Gestão Imobiliária",
+      "responsibilities": [
+        "Assegurar a gestão integrada dos ativos imobiliários sob gestão, promovendo a sua valorização sustentável e o cumprimento dos requisitos técnicos, regulatórios e ESG aplicáveis"
+      ],
+      "members": [
+        {
+          "name": "Alberto Melo",
+          "role": "Director - Operations and Real Estate Management"
+        }
+      ]
+    },
+    {
+      "name": "Responsável ESG",
+      "responsibilities": [
+        "Assegurar a implementação da estratégia ESG dos OIC geridos, em conformidade com os respetivos perfis e políticas de investimento",
+        "Apoiar a integração dos princípios ESG nos processos de decisão e gestão da Nexa",
+        "Apoiar a avaliação de riscos ESG com impacto potencial nos investimentos realizados em nome dos OIC sob sua gestão"
+      ],
+      "members": [
+        {
+          "name": "Fernanda Zelaya",
+          "role": "Responsável ESG"
+        }
+      ]
+    }
+  ],
+  "sharedServicesNote": "Em 2025 com a autorização da CMVM para o exercício da atividade como sociedade gestora de grande dimensão foram nomeados outros elementos fundamentais para garantir os objetivos de sustentabilidade da Nexa. Estas funções são asseguradas no âmbito de serviços partilhados."
+}
