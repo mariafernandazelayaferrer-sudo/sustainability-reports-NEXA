@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXA · Relatório de Sustentabilidade 2025</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #EAE7E0;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #2D2D2C;
+    padding: 48px 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .email {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #F5F2EB;
+    box-shadow: 0 1px 0 rgba(3,2,12,0.04), 0 24px 48px -24px rgba(3,2,12,0.16);
+  }
+
+  /* Top utility bar */
+  .utility {
+    background: #F5F2EB;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D6D1C7;
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9A9794;
+  }
+  .utility .brand {
+    display: flex; align-items: center; gap: 10px;
+    color: #2D2D2C;
+  }
+  .utility .brand svg { width: 16px; height: 16px; }
+  .utility .brand svg line { stroke: #C85204; stroke-width: 12; fill: none; }
+  .utility .lang b { color: #2D2D2C; padding-bottom: 1px; border-bottom: 1px solid #C85204; }
+  .utility .lang em { font-style: normal; opacity: 0.5; margin-left: 8px; }
+
+  /* Hero card */
+  .hero {
+    position: relative;
+    background: #3D3D3B;
+    color: #EDEAE3;
+    padding: 56px 32px 48px;
+    overflow: hidden;
+    height: 360px;
+  }
+  .hero-title {
+    position: relative;
+    z-index: 3;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 26px;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    max-width: 60%;
+  }
+  .hero-year {
+    position: relative;
+    z-index: 3;
+    margin-top: 14px;
+    font-weight: 300;
+    color: #C85204;
+    font-size: 60px;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+  }
+  .hero-meta {
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    z-index: 4;
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #9A9794;
+  }
+  .hero-meta .dot {
+    display: inline-block;
+    width: 5px; height: 5px;
+    background: #C85204;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .hero-x {
+    position: absolute;
+    right: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+  }
+  .hero-x line {
+    stroke: #C85204;
+    stroke-width: 7;
+    stroke-linecap: square;
+    fill: none;
+  }
+  .hero-bars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .hero-bars span {
+    position: absolute;
+    background: #1A1A18;
+    height: 9px;
+    border-radius: 1px;
+    transform-origin: 0 50%;
+  }
+
+  /* Body */
+  .body {
+    padding: 48px 56px 8px;
+    background: #F5F2EB;
+  }
+  .salutation {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2D2D2C;
+    margin-bottom: 22px;
+  }
+  .p {
+    font-size: 14.5px;
+    line-height: 1.66;
+    color: #2D2D2C;
+    margin-bottom: 18px;
+    max-width: 56ch;
+  }
+  .p strong { font-weight: 600; }
+
+  hr.divider {
+    border: 0;
+    border-top: 1px solid #D6D1C7;
+    margin: 32px 0;
+  }
+
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C85204;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 22px; height: 1px;
+    background: #C85204;
+  }
+
+  .structure { margin: 16px 0 8px; }
+  .item {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid #D6D1C7;
+    align-items: baseline;
+  }
+  .item:last-child { border-bottom: 0; }
+  .item .num {
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 1;
+    color: #C85204;
+    letter-spacing: -0.02em;
+  }
+  .item .title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #2D2D2C;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+  .item .desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #6C6964;
+  }
+
+  .cta-wrap { margin: 36px 0 8px; text-align: center; }
+  .cta {
+    display: inline-block;
+    padding: 18px 32px;
+    background: #C85204;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 999px;
+  }
+  .cta-sub {
+    margin-top: 14px;
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #9A9794;
+  }
+
+  .closing {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2D2D2C;
+    padding-left: 18px;
+    border-left: 2px solid #C85204;
+    margin: 32px 0 28px;
+    max-width: 50ch;
+  }
+  .closing b { font-style: normal; font-weight: 700; }
+
+  .signature {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid #D6D1C7;
+  }
+  .signature .greet { font-size: 13.5px; color: #2D2D2C; margin-bottom: 14px; }
+  .signature .name { font-weight: 600; font-size: 15px; color: #2D2D2C; letter-spacing: 0.01em; }
+  .signature .role {
+    margin-top: 4px;
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9A9794;
+  }
+
+  .footer {
+    background: #03020C;
+    color: #EDEAE3;
+    padding: 28px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .footer .word {
+    color: #EDEAE3;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.32em;
+  }
+  .footer a { color: #C85204; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="email">
+
+  <div class="utility">
+    <span>NEXA · RELATÓRIO 2025</span>
+    <span class="brand">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <line x1="14" y1="14" x2="42" y2="42"/>
+        <line x1="86" y1="14" x2="58" y2="42"/>
+        <line x1="58" y1="58" x2="86" y2="86"/>
+        <line x1="42" y1="58" x2="14" y2="86"/>
+      </svg>
+      <span>NEXA · SGOIC</span>
+    </span>
+    <span class="lang"><b>PT</b><em>EN</em></span>
+  </div>
+
+  <div class="hero">
+    <div class="hero-meta"><span class="dot"></span>1.ª EDIÇÃO · IN PRIMA MANO</div>
+
+    <div class="hero-bars" aria-hidden="true">
+      <span style="left:62%; top:48%;  width:110px; transform: rotate(-25deg);"></span>
+      <span style="left:54%; top:55%;  width:140px; transform: rotate(-24deg);"></span>
+      <span style="left:68%; top:62%;  width:120px; transform: rotate(-23deg);"></span>
+      <span style="left:48%; top:70%;  width:160px; transform: rotate(-22deg);"></span>
+      <span style="left:60%; top:78%;  width:150px; transform: rotate(-20deg);"></span>
+      <span style="left:42%; top:86%;  width:180px; transform: rotate(-18deg);"></span>
+      <span style="left:56%; top:94%;  width:140px; transform: rotate(-16deg);"></span>
+      <span style="left:72%; top:36%;  width:90px;  transform: rotate(-26deg);"></span>
+    </div>
+
+    <svg class="hero-x" viewBox="0 0 100 100" aria-hidden="true">
+      <line x1="14" y1="14" x2="42" y2="42"/>
+      <line x1="86" y1="14" x2="58" y2="42"/>
+      <line x1="58" y1="58" x2="86" y2="86"/>
+      <line x1="42" y1="58" x2="14" y2="86"/>
+    </svg>
+
+    <h1 class="hero-title">Relatório<br>de Sustentabilidade</h1>
+    <div class="hero-year">2025</div>
+  </div>
+
+  <div class="body">
+
+    <div class="salutation">Caros colegas,</div>
+
+    <p class="p">
+      Partilhamos hoje convosco, em primeira mão, o <strong>primeiro Relatório de Sustentabilidade da Nexa</strong>. Um marco para todos nós.
+    </p>
+
+    <p class="p">
+      Mais do que um exercício de reporte, este documento representa o início de um compromisso que pretendemos honrar a cada ano: gerir de forma eficiente, transparente e personalizada, com a consciência de que os ativos são também espaços de vida, de trabalho e de comunidade.
+    </p>
+
+    <hr class="divider">
+
+    <div class="eyebrow">Estrutura do relatório</div>
+
+    <div class="structure">
+
+      <div class="item">
+        <div class="num">01</div>
+        <div>
+          <div class="title">Nexa</div>
+          <div class="desc">A organização, a sua estrutura, visão estratégica e modelo de negócio.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="num">02</div>
+        <div>
+          <div class="title">Situação Atual</div>
+          <div class="desc">Como integramos a sustentabilidade no modelo de gestão, com foco nos impactos e responsabilidades ao longo da cadeia de valor.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="num">03</div>
+        <div>
+          <div class="title">O Caminho à Frente</div>
+          <div class="desc">A visão estratégica traduzida em compromissos concretos e mensuráveis, com planos de ação nas dimensões ambiental, social e de governação.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cta-wrap">
+      <a class="cta" href="#">Consultar relatório →</a>
+      <div class="cta-sub">PDF · 64 PG · PT/EN</div>
+    </div>
+
+    <hr class="divider">
+
+    <p class="closing">
+      Em tempos de incerteza, é o compromisso estruturado que distingue quem lidera de quem apenas segue. <b>A Nexa quer liderar.</b>
+    </p>
+
+    <p class="p">
+      Por isso, quero deixar um agradecimento sincero a todos os que contribuíram, com dados, com tempo, com pensamento crítico e com compromisso. Sem essa rede, este relatório não existiria.
+    </p>
+
+    <p class="p">
+      Fico disponível para qualquer dúvida.
+    </p>
+
+  </div>
+
+  <div class="footer">
+    <span class="word">NEXA</span>
+    <span>SGOIC · LISBOA · <a href="#">NEXA.PT</a></span>
+  </div>
+
+</div>
+
+</body>
+</html>
