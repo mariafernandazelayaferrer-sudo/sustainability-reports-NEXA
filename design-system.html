@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>NEXA · Design System v0.1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="nx-tokens.css">
+  <style>
+    /* ===================== RESET / BASE ===================== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--nx-font-sans);
+      font-size:var(--nx-size-md);
+      line-height:var(--nx-leading-body);
+      color:var(--nx-ink);
+      background:var(--nx-bone);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+
+    /* ===================== UTILITIES ===================== */
+    .nx-shell{max-width:var(--nx-page-max);margin-inline:auto;padding-inline:var(--nx-page-pad)}
+    .nx-mono{font-family:var(--nx-font-mono);font-size:var(--nx-size-2xs);letter-spacing:var(--nx-track-loose)}
+    .nx-caps{text-transform:uppercase;letter-spacing:var(--nx-track-caps);font-size:var(--nx-size-2xs);font-weight:var(--nx-w-medium)}
+    .nx-eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--nx-mute-on-bone)}
+    .nx-eyebrow::before{content:"";display:block;width:24px;height:1px;background:currentColor}
+    .nx-eyebrow--ink{color:var(--nx-mute-on-ink)}
+    .nx-hr{height:1px;background:var(--nx-line);border:0;margin:var(--nx-s-7) 0}
+    .nx-hr--dark{background:var(--nx-line-dark)}
+
+    /* ===================== TOP STRIP ===================== */
+    .nx-top{
+      position:sticky;top:0;z-index:50;
+      background:var(--nx-bone);
+      border-bottom:1px solid var(--nx-line);
+    }
+    .nx-top__row{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+    .nx-top__nav{display:flex;gap:28px;flex-wrap:wrap}
+    .nx-top__nav a{font-size:var(--nx-size-xs);color:var(--nx-mute-on-bone);transition:color var(--nx-dur-quick) var(--nx-ease-out)}
+    .nx-top__nav a:hover{color:var(--nx-ink)}
+    .nx-top__meta{font-size:var(--nx-size-2xs);color:var(--nx-mute-on-bone);font-family:var(--nx-font-mono)}
+
+    /* ===================== WORDMARK ===================== */
+    .nx-wordmark{display:inline-flex;align-items:center;gap:6px;font-weight:var(--nx-w-regular);letter-spacing:0.04em;font-size:var(--nx-size-md)}
+    .nx-wordmark .x{color:var(--nx-orange)}
+
+    /* ===================== HERO ===================== */
+    .nx-hero{
+      background:var(--nx-ink);
+      color:var(--nx-on-ink);
+      min-height:100vh;
+      padding:80px 0 0;
+      position:relative;
+      overflow:hidden;
+    }
+    .nx-hero__grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:48px;
+      position:relative;z-index:2;
+    }
+    .nx-hero__lede{display:grid;gap:20px;max-width:880px}
+    .nx-hero__title{
+      font-size:clamp(2.5rem, 6vw, var(--nx-size-3xl));
+      font-weight:var(--nx-w-light);
+      letter-spacing:var(--nx-track-tight);
+      line-height:var(--nx-leading-tight);
+    }
+    .nx-hero__sub{color:var(--nx-mute-on-ink);max-width:64ch;font-size:var(--nx-size-md)}
+    .nx-hero__tag{font-size:clamp(3rem, 8vw, var(--nx-size-4xl));font-weight:var(--nx-w-light);letter-spacing:var(--nx-track-tight);line-height:1.02}
+    .nx-hero__tag .verb{display:inline-block;opacity:0;transform:translateY(0.4em);animation:nxVerbIn var(--nx-dur-slow) var(--nx-ease-arch) forwards}
+    .nx-hero__tag .verb:nth-child(1){animation-delay:.4s}
+    .nx-hero__tag .verb:nth-child(2){animation-delay:.9s}
+    .nx-hero__tag .verb:nth-child(3){animation-delay:1.4s}
+    .nx-hero__tag .verb:nth-child(4){animation-delay:1.9s}
+    .nx-hero__tag .dot{color:var(--nx-orange)}
+    @keyframes nxVerbIn{to{opacity:1;transform:translateY(0)}}
+
+    /* Giant X mark behind hero */
+    .nx-hero__xmark{
+      position:absolute;inset:auto -120px -200px auto;
+      width:min(120vh, 1100px);
+      aspect-ratio:1;
+      pointer-events:none;
+      z-index:1;
+      opacity:.95;
+    }
+    .nx-hero__xmark .stroke{
+      stroke-dasharray:1000;
+      stroke-dashoffset:1000;
+      animation:nxStrokeIn 2s var(--nx-ease-arch) forwards;
+    }
+    .nx-hero__xmark .stroke--orange{stroke:var(--nx-orange);animation-delay:.5s}
+    .nx-hero__xmark .stroke--ink{stroke:var(--nx-ink-3);animation-delay:.2s}
+    @keyframes nxStrokeIn{to{stroke-dashoffset:0}}
+
+    /* Planks at the bottom of hero (cover reference, pg 1) */
+    .nx-hero__planks{
+      position:absolute;inset:auto 0 0 0;height:42vh;pointer-events:none;z-index:0;
+    }
+    .nx-hero__planks span{
+      position:absolute;background:var(--nx-ink-2);border-radius:2px;
+      transform:rotate(-12deg) translateY(120%);
+      animation:nxPlankIn 1.2s var(--nx-ease-arch) forwards;
+    }
+    @keyframes nxPlankIn{to{transform:rotate(-12deg) translateY(0)}}
+
+    /* hero kpi strip */
+    .nx-hero__kpis{
+      display:flex;flex-wrap:wrap;gap:14px;margin-top:48px;position:relative;z-index:2;
+    }
+    .nx-pillstat{
+      background:var(--nx-ink-2);
+      color:var(--nx-on-ink);
+      padding:18px 22px;
+      border-radius:var(--nx-r-md);
+      min-width:148px;
+      display:flex;flex-direction:column;gap:6px;
+      border:1px solid var(--nx-line-dark);
+    }
+    .nx-pillstat__num{
+      font-size:clamp(2rem, 3.5vw, 2.6rem);
+      font-weight:var(--nx-w-light);
+      letter-spacing:var(--nx-track-tight);
+      line-height:1;
+    }
+    .nx-pillstat__num .unit{font-size:.55em;color:var(--nx-mid);margin-left:4px}
+    .nx-pillstat__label{font-size:var(--nx-size-2xs);color:var(--nx-mid);letter-spacing:var(--nx-track-loose);text-transform:uppercase}
+
+    /* ===================== SECTION SHELL ===================== */
+    .nx-sect{padding:var(--nx-s-10) 0;position:relative}
+    .nx-sect--ink{background:var(--nx-ink);color:var(--nx-on-ink)}
+    .nx-sect--paper{background:var(--nx-paper)}
+    .nx-sect__head{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:var(--nx-s-9);max-width:980px}
+    .nx-sect__num{
+      font-size:clamp(4rem, 12vw, var(--nx-size-5xl));
+      font-weight:var(--nx-w-light);
+      letter-spacing:var(--nx-track-tight);
+      line-height:1;
+      color:var(--nx-orange);
+    }
+    .nx-sect__title{
+      font-size:clamp(2rem, 5vw, var(--nx-size-2xl));
+      font-weight:var(--nx-w-light);
+      letter-spacing:var(--nx-track-tight);
+      line-height:var(--nx-leading-tight);
+    }
+    .nx-sect__intro{color:var(--nx-mute-on-bone);max-width:64ch}
+    .nx-sect--ink .nx-sect__intro{color:var(--nx-mute-on-ink)}
+
+    /* ===================== LOGO ANATOMY ===================== */
+    .nx-anatomy{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+    .nx-anatomy__cell{
+      background:var(--nx-paper);
+      border:1px solid var(--nx-line);
+      border-radius:var(--nx-r-md);
+      padding:32px;
+      aspect-ratio:1.2/1;
+      display:grid;align-content:space-between;gap:16px;
+    }
+    .nx-anatomy__big{
+      display:grid;place-items:center;
+      font-size:clamp(3rem, 8vw, 5rem);
+      font-weight:var(--nx-w-regular);
+      letter-spacing:.04em;
+      color:var(--nx-ink);
+    }
+    .nx-anatomy__big .x{color:var(--nx-orange)}
+    .nx-anatomy__cap{font-size:var(--nx-size-2xs);color:var(--nx-mute-on-bone);font-family:var(--nx-font-mono)}
+    .nx-anatomy__ink{background:var(--nx-ink);color:var(--nx-on-ink);border-color:var(--nx-line-dark)}
+    .nx-anatomy__ink .nx-anatomy__big{color:var(--nx-on-ink)}
+    .nx-anatomy__ink .nx-anatomy__cap{color:var(--nx-mute-on-ink)}
+    .nx-anatomy__ornament{background:var(--nx-ink);color:var(--nx-orange);border-color:var(--nx-line-dark);position:relative;overflow:hidden}
+    .nx-anatomy__ornament svg{width:54%;height:54%}
+
+    /* ===================== COLOR ===================== */
+    .nx-palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+    .nx-swatch{
+      border-radius:var(--nx-r-md);
+      overflow:hidden;
+      border:1px solid var(--nx-line);
+      background:var(--nx-paper);
+      display:grid;grid-template-rows:160px auto;
+    }
+    .nx-swatch__chip{position:relative}
+    .nx-swatch__chip::after{content:attr(data-name);position:absolute;left:14px;bottom:12px;font-family:var(--nx-font-mono);font-size:var(--nx-size-2xs);color:rgba(255,255,255,.7)}
+    .nx-swatch__meta{padding:14px;display:grid;gap:4px}
+    .nx-swatch__hex{font-family:var(--nx-font-mono);font-size:var(--nx-size-sm);color:var(--nx-ink)}
+    .nx-swatch__role{font-size:var(--nx-size-xs);color:var(--nx-mute-on-bone)}
+    .nx-swatch.is-light .nx-swatch__chip::after{color:rgba(45,45,44,.6)}
+
+    /* ===================== TYPOGRAPHY ===================== */
+    .nx-typo{display:grid;gap:var(--nx-s-6)}
+    .nx-typo__row{display:grid;grid-template-columns:140px 1fr;gap:32px;align-items:baseline;padding-block:18px;border-top:1px solid var(--nx-line)}
+    .nx-typo__row:last-child{border-bottom:1px solid var(--nx-line)}
+    .nx-typo__meta{display:grid;gap:4px;font-family:var(--nx-font-mono);font-size:var(--nx-size-2xs);color:var(--nx-mute-on-bone)}
+    .nx-typo__meta b{color:var(--nx-ink);font-weight:var(--nx-w-medium)}
+    .nx-typo__spec{line-height:var(--nx-leading-tight)}
+    .nx-typo__spec.display-2xl{font-size:clamp(3rem,7vw,5rem);font-weight:var(--nx-w-light);letter-spacing:var(--nx-track-tight)}
+    .nx-typo__spec.display-xl{font-size:clamp(2.4rem,5vw,3.2rem);font-weight:var(--nx-w-light);letter-spacing:var(--nx-track-tight)}
+    .nx-typo__spec.display-lg{font-size:clamp(1.8rem,3vw,2.25rem);font-weight:var(--nx-w-light);letter-spacing:var(--nx-track-tight)}
+    .nx-typo__spec.editorial{font-style:italic;font-weight:var(--nx-w-bold);font-size:clamp(1.5rem,3vw,2rem);letter-spacing:var(--nx-track-tight)}
+    .nx-typo__spec.caps{font-size:var(--nx-size-xs);text-transform:uppercase;letter-spacing:var(--nx-track-caps);font-weight:var(--nx-w-medium)}
+    .nx-typo__spec.body{font-size:var(--nx-size-md);line-height:var(--nx-leading-body);max-width:62ch}
+    .nx-typo__spec.numeral{font-size:clamp(4rem,9vw,7rem);font-weight:var(--nx-w-light);letter-spacing:-0.04em;line-height:.92}
+    .nx-typo__spec.numeral .unit{color:var(--nx-orange)}
+
+    /* ===================== PATTERN GRID ===================== */
+    .nx-patterns{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .nx-pattern{
+      position:relative;aspect-ratio:4/3;border-radius:var(--nx-r-md);overflow:hidden;
+      background:var(--nx-ink);color:var(--nx-on-ink);
+      border:1px solid var(--nx-line-dark);
+    }
+    .nx-pattern__label{
+      position:absolute;inset:auto 14px 14px auto;
+      font-family:var(--nx-font-mono);font-size:var(--nx-size-2xs);
+      color:var(--nx-mute-on-ink);z-index:3;
+      background:rgba(45,45,44,.7);backdrop-filter:blur(6px);
+      padding:6px 10px;border-radius:var(--nx-r-pill);
+    }
+    .nx-pattern__name{position:absolute;inset:14px auto auto 14px;z-index:3;font-size:var(--nx-size-sm);color:var(--nx-on-ink);font-weight:var(--nx-w-medium)}
+    .nx-pattern__name small{display:block;color:var(--nx-mute-on-ink);font-weight:var(--nx-w-regular);font-size:var(--nx-size-2xs);margin-top:2px;letter-spacing:var(--nx-track-loose)}
+
+    /* — Pattern A: Skyline bars (philosophy pg 8) — */
+    .nx-pattern--skyline{background:var(--nx-ink)}
+    .nx-pattern--skyline .bars{position:absolute;inset:auto 0 0 0;height:62%;display:flex;align-items:end;gap:1.2%;padding:0 4%}
+    .nx-pattern--skyline .bar{flex:1 1 0;background:var(--nx-ink-3);transform-origin:bottom;transform:scaleY(0);animation:nxBarRise 1.2s var(--nx-ease-arch) forwards}
+
+    /* — Pattern B: Wind dashes (philosophy pg 23) — */
+    .nx-pattern--wind{background:var(--nx-ink)}
+    .nx-pattern--wind .dash{
+      position:absolute;width:54px;height:3px;background:var(--nx-ink-3);
+      transform-origin:center;
+      animation:nxDrift 8s ease-in-out infinite;
+    }
+
+    /* — Pattern C: Wheat field (philosophy pg 28) — */
+    .nx-pattern--wheat{background:var(--nx-ink)}
+    .nx-pattern--wheat svg{position:absolute;inset:0;width:100%;height:100%}
+    .nx-pattern--wheat .stalk{stroke:var(--nx-ink-3);stroke-width:2;animation:nxBreathe 4s ease-in-out infinite}
+
+    /* — Pattern D: Sun bursts (chapter cover pg 30) — */
+    .nx-pattern--sun{background:var(--nx-orange);color:var(--nx-on-orange)}
+    .nx-pattern--sun .sun-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(4,1fr);place-items:center;padding:8%}
+    .nx-pattern--sun .sun{width:64%;aspect-ratio:1;animation:nxSpin 14s linear infinite}
+    .nx-pattern--sun .sun:nth-child(odd){animation-direction:reverse}
+    .nx-pattern--sun .nx-pattern__name{color:var(--nx-on-orange)}
+    .nx-pattern--sun .nx-pattern__name small{color:rgba(45,45,44,.6)}
+    .nx-pattern--sun .nx-pattern__label{background:rgba(45,45,44,.18);color:var(--nx-on-orange)}
+
+    @keyframes nxBarRise{to{transform:scaleY(1)}}
+    @keyframes nxDrift{
+      0%,100%{transform:translate(0,0) rotate(var(--rot,12deg))}
+      50%{transform:translate(8px,-6px) rotate(calc(var(--rot,12deg) + 4deg))}
+    }
+    @keyframes nxBreathe{0%,100%{opacity:.55}50%{opacity:1}}
+    @keyframes nxSpin{to{transform:rotate(360deg)}}
+
+    /* ===================== COMPONENTS ===================== */
+    .nx-comp-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .nx-comp{background:var(--nx-paper);border:1px solid var(--nx-line);border-radius:var(--nx-r-md);padding:24px;display:grid;gap:16px}
+    .nx-comp__title{font-size:var(--nx-size-sm);font-weight:var(--nx-w-medium);color:var(--nx-ink);display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .nx-comp__title small{font-family:var(--nx-font-mono);color:var(--nx-mute-on-bone);font-weight:var(--nx-w-regular);font-size:var(--nx-size-2xs)}
+    .nx-comp__body{display:grid;place-items:center;min-height:160px;padding:20px}
+    .nx-comp__note{font-size:var(--nx-size-xs);color:var(--nx-mute-on-bone)}
+
+    /* Vertical KPI pill — page 4 style */
+    .nx-vpill{
+      background:var(--nx-ink);color:var(--nx-on-ink);
+      border-radius:var(--nx-r-md);
+      padding:22px 26px;
+      display:grid;gap:6px;min-width:200px;
+    }
+    .nx-vpill__big{font-size:clamp(2.6rem,5vw,3.2rem);font-weight:var(--nx-w-light);letter-spacing:var(--nx-track-tight);line-height:1}
+    .nx-vpill__big .unit{font-size:.5em;color:var(--nx-mid);margin-left:2px}
+    .nx-vpill__label{font-size:var(--nx-size-2xs);color:var(--nx-mid);text-transform:uppercase;letter-spacing:var(--nx-track-loose)}
+
+    /* Square stat card — page 4 right side */
+    .nx-statbox{
+      background:var(--nx-paper);
+      border:1px solid var(--nx-line);
+      border-radius:var(--nx-r-md);
+      width:160px;height:160px;
+      display:grid;place-items:center;gap:0;
+      padding:18px;
+    }
+    .nx-statbox__num{font-size:clamp(3rem,6vw,4rem);font-weight:var(--nx-w-light);color:var(--nx-orange);letter-spacing:var(--nx-track-tight);line-height:1}
+
+    /* Wide dark pill — page 18 (17,2%) */
+    .nx-widestat{
+      background:var(--nx-ink);color:var(--nx-on-ink);
+      border-radius:var(--nx-r-md);
+      padding:28px 36px;
+      display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+      width:100%;flex-wrap:wrap;
+    }
+    .nx-widestat__num{font-size:clamp(3.2rem,6vw,4.5rem);font-weight:var(--nx-w-light);line-height:1;letter-spacing:var(--nx-track-tight)}
+    .nx-widestat__cap{font-size:var(--nx-size-xs);color:var(--nx-mid)}
+
+    /* Materiality tags */
+    .nx-tagset{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+    .nx-tag{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:7px 14px;border-radius:var(--nx-r-pill);
+      font-family:var(--nx-font-mono);font-size:var(--nx-size-xs);
+      background:var(--nx-paper);color:var(--nx-ink);
+      border:1px solid var(--nx-line);
+      transition:transform var(--nx-dur-quick) var(--nx-ease-arch), background var(--nx-dur-quick) var(--nx-ease-out);
+    }
+    .nx-tag:hover{transform:translateY(-1px);background:var(--nx-ink);color:var(--nx-on-ink);border-color:var(--nx-ink)}
+    .nx-tag--env{background:transparent;border-color:var(--nx-line-dark);color:var(--nx-ink)}
+    .nx-tag--soc{background:var(--nx-orange-soft);border-color:transparent;color:var(--nx-ink)}
+    .nx-tag--gov{background:var(--nx-orange-deep);border-color:transparent;color:var(--nx-paper)}
+
+    /* Chapter footer nav (linear strip) */
+    .nx-footnav{
+      display:grid;grid-template-columns:auto repeat(5,1fr) auto;
+      align-items:center;
+      border:1px solid var(--nx-line);
+      border-radius:var(--nx-r-md);
+      background:var(--nx-paper);
+      overflow:hidden;
+      width:100%;
+    }
+    .nx-footnav__cell{padding:14px 16px;font-size:var(--nx-size-2xs);color:var(--nx-mute-on-bone);border-right:1px solid var(--nx-line);text-align:center}
+    .nx-footnav__cell:last-child{border-right:0}
+    .nx-footnav__cell.is-current{background:var(--nx-orange);color:var(--nx-on-orange);font-weight:var(--nx-w-medium)}
+    .nx-footnav__cell.is-current-ink{background:var(--nx-ink);color:var(--nx-on-ink);font-weight:var(--nx-w-medium)}
+    .nx-footnav__brand{background:var(--nx-paper);font-weight:var(--nx-w-regular);font-size:var(--nx-size-sm);letter-spacing:0.04em}
+    .nx-footnav__brand .x{color:var(--nx-orange)}
+    .nx-footnav__page{font-family:var(--nx-font-mono);color:var(--nx-orange);font-size:var(--nx-size-2xs)}
+
+    /* Asset card */
+    .nx-asset{
+      background:var(--nx-paper);
+      border:1px solid var(--nx-line);
+      border-radius:var(--nx-r-md);
+      overflow:hidden;
+      display:grid;grid-template-rows:128px auto;
+      width:100%;
+    }
+    .nx-asset__img{
+      background:repeating-linear-gradient(45deg,var(--nx-mist) 0 8px,var(--nx-bone) 8px 16px);
+      position:relative;
+    }
+    .nx-asset__img::after{
+      content:"Edif. La Movida";position:absolute;inset:auto 12px 10px;
+      font-family:var(--nx-font-mono);font-size:var(--nx-size-2xs);color:var(--nx-mute-on-bone);
+    }
+    .nx-asset__body{padding:14px 16px;display:grid;gap:6px}
+    .nx-asset__name{font-size:var(--nx-size-md);font-weight:var(--nx-w-medium);color:var(--nx-ink)}
+    .nx-asset__meta{font-size:var(--nx-size-xs);color:var(--nx-mute-on-bone);display:flex;gap:8px;flex-wrap:wrap}
+    .nx-asset__meta b{color:var(--nx-ink);font-weight:var(--nx-w-medium)}
+    .nx-asset__status{
+      display:inline-flex;align-items:center;gap:6px;font-size:var(--nx-size-2xs);
+      font-family:var(--nx-font-mono);color:var(--nx-orange);
+    }
+    .nx-asset__status::before{content:"";width:6px;height:6px;background:var(--nx-orange);border-radius:50%}
+
+    /* Editorial quote */
+    .nx-quote{
+      background:var(--nx-ink);color:var(--nx-on-ink);
+      padding:40px;border-radius:var(--nx-r-md);
+      font-style:italic;font-weight:var(--nx-w-bold);
+      font-size:clamp(1.4rem,2.5vw,1.8rem);
+      letter-spacing:var(--nx-track-tight);
+      line-height:1.25;
+      width:100%;
+    }
+    .nx-quote small{display:block;margin-top:14px;font-family:var(--nx-font-mono);font-style:normal;font-weight:var(--nx-w-regular);font-size:var(--nx-size-2xs);color:var(--nx-mute-on-ink);letter-spacing:var(--nx-track-loose)}
+
+    /* ===================== MOTION TABLE ===================== */
+    .nx-motion{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .nx-motion__card{
+      background:var(--nx-paper);border:1px solid var(--nx-line);
+      border-radius:var(--nx-r-md);padding:24px;display:grid;gap:14px;
+      min-height:200px;
+    }
+    .nx-motion__card .demo{position:relative;height:84px;border-radius:var(--nx-r-sm);background:var(--nx-bone);overflow:hidden}
+    .nx-motion__card .demo .ball{position:absolute;top:50%;left:8px;width:28px;height:28px;border-radius:50%;background:var(--nx-orange);transform:translateY(-50%);animation:nxDemoMove 3s infinite}
+    .nx-motion__card .demo .ball.b-arch{animation-timing-function:cubic-bezier(.7,0,.2,1)}
+    .nx-motion__card .demo .ball.b-out{animation-timing-function:cubic-bezier(.22,1,.36,1)}
+    .nx-motion__card .demo .ball.b-spring{animation-timing-function:cubic-bezier(.34,1.56,.64,1)}
+    .nx-motion__card .demo .ball.b-in{animation-timing-function:cubic-bezier(.32,0,.67,0)}
+    .nx-motion__name{font-size:var(--nx-size-sm);font-weight:var(--nx-w-medium)}
+    .nx-motion__name small{display:block;color:var(--nx-mute-on-bone);font-weight:var(--nx-w-regular);font-family:var(--nx-font-mono);font-size:var(--nx-size-2xs);margin-top:2px}
+    @keyframes nxDemoMove{
+      0%{left:8px}45%{left:calc(100% - 36px)}55%{left:calc(100% - 36px)}100%{left:8px}
+    }
+
+    /* ===================== COMPOSITION MOCKS ===================== */
+    .nx-mocks{display:grid;gap:24px;grid-template-columns:1fr;margin-top:32px}
+    .nx-mock{
+      position:relative;border-radius:var(--nx-r-md);overflow:hidden;
+      aspect-ratio:16/10;border:1px solid var(--nx-line-dark);
+      isolation:isolate;
+    }
+    .nx-mock--hero{background:var(--nx-ink);color:var(--nx-on-ink)}
+    .nx-mock--philosophy{background:var(--nx-ink);color:var(--nx-on-ink)}
+    .nx-mock--chapter{background:var(--nx-orange);color:var(--nx-on-orange)}
+    .nx-mock__inner{position:absolute;inset:0;padding:6%;display:grid}
+    .nx-mock__caption{
+      position:absolute;left:14px;bottom:12px;
+      font-family:var(--nx-font-mono);font-size:var(--nx-size-2xs);
+      color:rgba(255,255,255,.6);z-index:3;
+      background:rgba(0,0,0,.25);padding:5px 10px;border-radius:var(--nx-r-pill);
+      backdrop-filter:blur(6px);
+    }
+    .nx-mock--chapter .nx-mock__caption{color:rgba(45,45,44,.6);background:rgba(255,255,255,.25)}
+
+    /* Hero mock */
+    .nx-mock--hero .title{font-size:clamp(1.5rem,3.4vw,2.4rem);font-weight:var(--nx-w-light);letter-spacing:var(--nx-track-tight);line-height:1.05;max-width:60%;align-self:start}
+    .nx-mock--hero .title .dot{color:var(--nx-orange)}
+    .nx-mock--hero .chain{position:absolute;inset:auto 8% 14% auto;width:42%;aspect-ratio:1;opacity:.95}
+    .nx-mock--hero .kpis{position:absolute;left:6%;right:6%;bottom:14%;display:flex;gap:10px;flex-wrap:wrap}
+    .nx-mock--hero .vp{background:var(--nx-ink-2);border:1px solid var(--nx-line-dark);border-radius:var(--nx-r-md);padding:10px 14px;font-size:var(--nx-size-xs);color:var(--nx-on-ink)}
+    .nx-mock--hero .vp b{display:block;font-size:1.4rem;font-weight:var(--nx-w-light)}
+
+    /* Philosophy mock */
+    .nx-mock--philosophy .phrase{
+      position:absolute;inset:38% 8% auto auto;max-width:42%;
+      font-style:italic;font-weight:var(--nx-w-bold);
+      font-size:clamp(.95rem,2vw,1.4rem);line-height:1.25;
+      letter-spacing:var(--nx-track-tight);text-align:right;
+    }
+    .nx-mock--philosophy .xmini{position:absolute;left:4%;top:6%;width:6%;color:var(--nx-orange);opacity:.7}
+    .nx-mock--philosophy .skyline{position:absolute;inset:auto 0 0 0;height:46%;display:flex;align-items:end;gap:.6%;padding:0 4%}
+    .nx-mock--philosophy .skyline .bar{flex:1 1 0;background:var(--nx-ink-3);transform-origin:bottom}
+
+    /* Chapter mock */
+    .nx-mock--chapter .left{
+      position:absolute;inset:0 50% 0 0;
+      background-image:radial-gradient(circle at center, var(--nx-orange-deep) 0 6%, transparent 7%);
+      background-size:60px 60px;
+      animation:nxSunsBg 30s linear infinite;
+    }
+    .nx-mock--chapter .num{position:absolute;left:6%;bottom:8%;font-size:clamp(4rem,12vw,9rem);font-weight:var(--nx-w-light);color:rgba(45,45,44,.18);line-height:1;letter-spacing:var(--nx-track-tight)}
+    .nx-mock--chapter .title{position:absolute;left:54%;top:14%;right:6%;font-size:clamp(1.3rem,3vw,2rem);font-weight:var(--nx-w-light);letter-spacing:var(--nx-track-tight);line-height:1.1}
+    @keyframes nxSunsBg{to{background-position:120px 120px}}
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width:780px){
+      .nx-typo__row{grid-template-columns:1fr;gap:12px}
+      .nx-hero__planks{height:30vh}
+      .nx-top__nav{display:none}
+      .nx-hero{padding-top:48px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOP STRIP ===== -->
+  <header class="nx-top">
+    <div class="nx-shell nx-top__row">
+      <a class="nx-wordmark" href="#top">N<span aria-hidden="true">≡</span><span class="x">X</span><span aria-hidden="true">∧</span></a>
+      <nav class="nx-top__nav" aria-label="Design System sections">
+        <a href="#logo">01 Logo</a>
+        <a href="#color">02 Color</a>
+        <a href="#type">03 Tipografía</a>
+        <a href="#patterns">04 Patterns</a>
+        <a href="#components">05 Componentes</a>
+        <a href="#motion">06 Motion</a>
+        <a href="#mocks">07 Composiciones</a>
+      </nav>
+      <div class="nx-top__meta">v0.1 · 2026-05-15</div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="nx-hero" id="top">
+    <div class="nx-shell nx-hero__grid">
+      <div class="nx-hero__lede">
+        <span class="nx-caps nx-eyebrow nx-eyebrow--ink">Relatório de Sustentabilidade · Web Edition · Design System</span>
+        <h1 class="nx-hero__title">Una identidad construida para durar. Un lenguaje visual para hacer la sustentabilidad legible, icónica e intencional.</h1>
+        <p class="nx-hero__sub">Sistema de diseño para la edición web del <em>Relatório de Sustentabilidade NEXA 2025</em>. Duotono estricto, tipografía editorial, cuatro patrones-firma y un único acento de color: la X naranja. Documento de referencia para implementación.</p>
+      </div>
+
+      <div class="nx-hero__tag" aria-label="Connect, Invest, Build the future.">
+        <span class="verb">Connect<span class="dot">,</span></span>
+        <span class="verb">&nbsp;Invest<span class="dot">,</span></span>
+        <span class="verb">&nbsp;Build the future</span>
+        <span class="verb dot">.</span>
+      </div>
+
+      <div class="nx-hero__kpis" aria-label="Hero KPIs">
+        <div class="nx-pillstat"><div class="nx-pillstat__num">198<span class="unit">M€</span></div><div class="nx-pillstat__label">Ativos sob gestão</div></div>
+        <div class="nx-pillstat"><div class="nx-pillstat__num">18</div><div class="nx-pillstat__label">Ativos imobiliários</div></div>
+        <div class="nx-pillstat"><div class="nx-pillstat__num">10</div><div class="nx-pillstat__label">Colaboradores</div></div>
+        <div class="nx-pillstat"><div class="nx-pillstat__num">3</div><div class="nx-pillstat__label">OIC sob gestão</div></div>
+        <div class="nx-pillstat"><div class="nx-pillstat__num">8</div><div class="nx-pillstat__label">Cidades em Portugal</div></div>
+      </div>
+    </div>
+
+    <!-- Giant X mark drawing in -->
+    <svg class="nx-hero__xmark" viewBox="0 0 600 600" aria-hidden="true">
+      <line class="stroke stroke--orange" x1="80" y1="80" x2="520" y2="520" stroke-width="44" stroke-linecap="butt"/>
+      <line class="stroke stroke--ink"    x1="520" y1="80" x2="80" y2="520" stroke-width="44" stroke-linecap="butt"/>
+    </svg>
+
+    <!-- Planks reference (page 1 cover wood beams) -->
+    <div class="nx-hero__planks" aria-hidden="true" id="planks"></div>
+  </section>
+
+  <!-- ===== §01 LOGO ===== -->
+  <section class="nx-sect" id="logo">
+    <div class="nx-shell">
+      <header class="nx-sect__head">
+        <span class="nx-eyebrow nx-caps">§01 — Logotipo</span>
+        <h2 class="nx-sect__title">El wordmark <strong style="font-weight:600">N≡X∧</strong> — geometría humanista, X como punto de conexión.</h2>
+        <p class="nx-sect__intro">Solo tipografía, sin pictograma. La <em>X</em> es la única letra coloreada: es la <strong>marca</strong> y la <strong>metáfora</strong> — donde el capital encuentra el propósito. En estados oscuros la N pasa a gris claro; la X permanece naranja siempre.</p>
+      </header>
+
+      <div class="nx-anatomy">
+        <div class="nx-anatomy__cell">
+          <div class="nx-anatomy__big">N<span aria-hidden="true">≡</span><span class="x">X</span><span aria-hidden="true">∧</span></div>
+          <div class="nx-anatomy__cap">// Wordmark · light surface · sans regular tracking 0.04em</div>
+        </div>
+        <div class="nx-anatomy__cell nx-anatomy__ink">
+          <div class="nx-anatomy__big">N<span aria-hidden="true">≡</span><span class="x">X</span><span aria-hidden="true">∧</span></div>
+          <div class="nx-anatomy__cap">// Wordmark · dark surface · X invariante</div>
+        </div>
+        <div class="nx-anatomy__cell nx-anatomy__ornament">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <line x1="14" y1="14" x2="86" y2="86" stroke="currentColor" stroke-width="10"/>
+            <line x1="86" y1="14" x2="14" y2="86" stroke="currentColor" stroke-width="10"/>
+          </svg>
+          <div class="nx-anatomy__cap" style="color:rgba(243,180,140,.7)">// Ornament · solo X · top-left de páginas filosofía</div>
+        </div>
+        <div class="nx-anatomy__cell">
+          <div class="nx-anatomy__big" style="font-size:1.6rem;line-height:1.2;letter-spacing:0">
+            <span style="display:block">NEXA<span style="color:var(--nx-mute-on-bone);font-weight:300"> · SGOIC</span></span>
+            <span style="display:block;font-size:.75rem;color:var(--nx-mute-on-bone);font-weight:400;letter-spacing:.04em">SOCIEDADE GESTORA OIC</span>
+          </div>
+          <div class="nx-anatomy__cap">// Endorsement lockup · descriptor de actividad regulada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="nx-hr nx-shell" />
+
+  <!-- ===== §02 COLOR ===== -->
+  <section class="nx-sect" id="color">
+    <div class="nx-shell">
+      <header class="nx-sect__head">
+        <span class="nx-eyebrow nx-caps">§02 — Color</span>
+        <h2 class="nx-sect__title">Duotono estricto: <strong style="color:var(--nx-orange);font-weight:600">naranja brûlé</strong> sobre <strong style="font-weight:600">tinta cálida</strong>. Sin verde ESG. Sin gradientes. Sin azules institucionales.</h2>
+        <p class="nx-sect__intro">El reporte impreso no usa más de cinco colores. La web replica esa disciplina. Toda intervención de color funciona como signal — nunca como decoración.</p>
+      </header>
+
+      <div class="nx-palette">
+        <div class="nx-swatch"><div class="nx-swatch__chip" style="background:#2D2D2C" data-name="--nx-ink"></div><div class="nx-swatch__meta"><div class="nx-swatch__hex">#2D2D2C</div><div class="nx-swatch__role">Ink · superficies oscuras dominantes</div></div></div>
+        <div class="nx-swatch"><div class="nx-swatch__chip" style="background:#E36420" data-name="--nx-orange"></div><div class="nx-swatch__meta"><div class="nx-swatch__hex">#E36420</div><div class="nx-swatch__role">Orange · único acento · X, KPIs, capítulos</div></div></div>
+        <div class="nx-swatch is-light"><div class="nx-swatch__chip" style="background:#EDEAE3" data-name="--nx-bone"></div><div class="nx-swatch__meta"><div class="nx-swatch__hex">#EDEAE3</div><div class="nx-swatch__role">Bone · fondo dominante de contenido</div></div></div>
+        <div class="nx-swatch is-light"><div class="nx-swatch__chip" style="background:#F5F2EB" data-name="--nx-paper"></div><div class="nx-swatch__meta"><div class="nx-swatch__hex">#F5F2EB</div><div class="nx-swatch__role">Paper · cards y superficies secundarias</div></div></div>
+        <div class="nx-swatch is-light"><div class="nx-swatch__chip" style="background:#9A9794" data-name="--nx-mid"></div><div class="nx-swatch__meta"><div class="nx-swatch__hex">#9A9794</div><div class="nx-swatch__role">Mid-grey · captions, ejes, metadata</div></div></div>
+        <div class="nx-swatch is-light"><div class="nx-swatch__chip" style="background:#D6D1C7" data-name="--nx-line"></div><div class="nx-swatch__meta"><div class="nx-swatch__hex">#D6D1C7</div><div class="nx-swatch__role">Line · hairlines sobre bone</div></div></div>
+        <div class="nx-swatch"><div class="nx-swatch__chip" style="background:#C2531A" data-name="--nx-orange-deep"></div><div class="nx-swatch__meta"><div class="nx-swatch__hex">#C2531A</div><div class="nx-swatch__role">Deep · hover/pressed sobre orange</div></div></div>
+        <div class="nx-swatch is-light"><div class="nx-swatch__chip" style="background:#F1B58C" data-name="--nx-orange-soft"></div><div class="nx-swatch__meta"><div class="nx-swatch__hex">#F1B58C</div><div class="nx-swatch__role">Peach · únicamente en chart fills</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="nx-hr nx-shell" />
+
+  <!-- ===== §03 TYPOGRAPHY ===== -->
+  <section class="nx-sect" id="type">
+    <div class="nx-shell">
+      <header class="nx-sect__head">
+        <span class="nx-eyebrow nx-caps">§03 — Tipografía</span>
+        <h2 class="nx-sect__title"><em>Inter</em> en peso ligero. Tracking ajustado. Italic bold para los momentos editoriales. Una sola familia, muchas voces.</h2>
+        <p class="nx-sect__intro">Google Fonts only — sin licencias comerciales. Inter 300/400 cubre display + body. Inter Italic 700 reserva el momento <em>filosófico</em>. JetBrains Mono pequeño para metadata y código de tag.</p>
+      </header>
+
+      <div class="nx-typo">
+        <div class="nx-typo__row">
+          <div class="nx-typo__meta"><b>Display 2XL</b><span>Inter Light 300 · 80–120px · -0.02em</span><span>Hero · titles · taglines</span></div>
+          <div class="nx-typo__spec display-2xl">Connect, Invest, Build the future<span style="color:var(--nx-orange)">.</span></div>
+        </div>
+        <div class="nx-typo__row">
+          <div class="nx-typo__meta"><b>Display XL</b><span>Inter Light 300 · 48–72px</span><span>Section openers</span></div>
+          <div class="nx-typo__spec display-xl">Análise de Dupla Materialidade</div>
+        </div>
+        <div class="nx-typo__row">
+          <div class="nx-typo__meta"><b>Editorial</b><span>Inter Italic 700 · 24–48px · -0.02em</span><span>Filosofía · quote moments</span></div>
+          <div class="nx-typo__spec editorial">A sustentabilidade não é apenas uma meta a alcançar. É a forma como a Nexa decide, constrói e lidera todos os dias.</div>
+        </div>
+        <div class="nx-typo__row">
+          <div class="nx-typo__meta"><b>Numeral</b><span>Inter Light 300 · 80–176px · -0.04em</span><span>198M€ · KPI hero · capítulos</span></div>
+          <div class="nx-typo__spec numeral">198<span class="unit">M€</span></div>
+        </div>
+        <div class="nx-typo__row">
+          <div class="nx-typo__meta"><b>Caps mono</b><span>Inter Medium 500 · 11–13px · 0.14em</span><span>Eyebrows · etiquetas · footer nav</span></div>
+          <div class="nx-typo__spec caps">02 Situação Atual · Environmental · Introdução</div>
+        </div>
+        <div class="nx-typo__row">
+          <div class="nx-typo__meta"><b>Body</b><span>Inter Regular 400 · 17px · 1.55</span><span>Texto corrido</span></div>
+          <div class="nx-typo__spec body">A Nexa pretende continuar a ser um ponto de ligação entre investidores e oportunidades, atuando com visão de longo prazo e promovendo modelos de negócios diferenciadores, acompanhando as dinâmicas do mercado.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §04 PATTERNS ===== -->
+  <section class="nx-sect nx-sect--ink" id="patterns">
+    <div class="nx-shell">
+      <header class="nx-sect__head">
+        <span class="nx-eyebrow nx-eyebrow--ink nx-caps">§04 — Patterns</span>
+        <h2 class="nx-sect__title">Cuatro patrones-firma. Un mismo lenguaje arquitectónico, cuatro respiraciones distintas. Cada uno marca un momento del scroll.</h2>
+        <p class="nx-sect__intro">Generados en SVG/CSS — sin imágenes raster. Diseñados para escalar, responder al cursor y construirse al entrar en viewport. Heredados directamente de las páginas-filosofía y la portada de capítulo del impreso (pp. 8, 23, 28, 30, 35).</p>
+      </header>
+
+      <div class="nx-patterns">
+        <div class="nx-pattern nx-pattern--skyline">
+          <div class="nx-pattern__name">Skyline bars<small>// pg 8 · construir · solidez · portfolio</small></div>
+          <div class="bars" id="bars-a"></div>
+          <div class="nx-pattern__label">A · skyline</div>
+        </div>
+        <div class="nx-pattern nx-pattern--wind">
+          <div class="nx-pattern__name">Wind dashes<small>// pg 23 · transición · alterações climáticas</small></div>
+          <div id="wind-a"></div>
+          <div class="nx-pattern__label">B · wind</div>
+        </div>
+        <div class="nx-pattern nx-pattern--wheat">
+          <div class="nx-pattern__name">Wheat field<small>// pg 28 · rigor · governance · tejido fiduciario</small></div>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <g id="wheat-a"></g>
+          </svg>
+          <div class="nx-pattern__label">C · wheat</div>
+        </div>
+        <div class="nx-pattern nx-pattern--sun">
+          <div class="nx-pattern__name">Sun bursts<small>// pg 30 · perspetivas futuras · chapter cover</small></div>
+          <div class="sun-grid" id="suns-a"></div>
+          <div class="nx-pattern__label">D · sun</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §05 COMPONENTS ===== -->
+  <section class="nx-sect" id="components">
+    <div class="nx-shell">
+      <header class="nx-sect__head">
+        <span class="nx-eyebrow nx-caps">§05 — Componentes</span>
+        <h2 class="nx-sect__title">Sistema modular. Cada pieza heredada de una página específica del reporte. Reutilizables, animables, semánticamente claros.</h2>
+        <p class="nx-sect__intro">Naming convention <code>.nx-*</code>. Cada componente tiene su tono dominante (ink, paper, orange) y solo uno. Mezclar tonos en un mismo componente está fuera del sistema.</p>
+      </header>
+
+      <div class="nx-comp-grid">
+        <article class="nx-comp" style="grid-column:span 4">
+          <div class="nx-comp__title">Vertical KPI pill <small>.nx-vpill</small></div>
+          <div class="nx-comp__body">
+            <div class="nx-vpill">
+              <div class="nx-vpill__big" data-count="198" data-suffix="M€">198<span class="unit">M€</span></div>
+              <div class="nx-vpill__label">Ativos sob gestão</div>
+            </div>
+          </div>
+          <div class="nx-comp__note">Hero stat principal · superficie ink · número Inter Light · label mono uppercase.</div>
+        </article>
+
+        <article class="nx-comp" style="grid-column:span 4">
+          <div class="nx-comp__title">Square stat <small>.nx-statbox</small></div>
+          <div class="nx-comp__body">
+            <div class="nx-statbox"><div class="nx-statbox__num" data-count="18">18</div></div>
+          </div>
+          <div class="nx-comp__note">Contador secundario · superficie paper · número orange.</div>
+        </article>
+
+        <article class="nx-comp" style="grid-column:span 4">
+          <div class="nx-comp__title">Wide stat band <small>.nx-widestat</small></div>
+          <div class="nx-comp__body">
+            <div class="nx-widestat">
+              <div class="nx-widestat__num" data-count="17.2" data-suffix="%">17,2%</div>
+              <div class="nx-widestat__cap">% Energia renovável<br/>integrada · 2025</div>
+            </div>
+          </div>
+          <div class="nx-comp__note">KPI ambiental dominante · superficie ink · pg 18 reference.</div>
+        </article>
+
+        <article class="nx-comp" style="grid-column:span 6">
+          <div class="nx-comp__title">Materiality tags <small>.nx-tag</small></div>
+          <div class="nx-comp__body">
+            <div class="nx-tagset">
+              <span class="nx-tag nx-tag--env">E1.1 Energia</span>
+              <span class="nx-tag nx-tag--env">E1.2 Climáticas</span>
+              <span class="nx-tag nx-tag--env">E3 Água</span>
+              <span class="nx-tag nx-tag--soc">S1.2 Bem-Estar</span>
+              <span class="nx-tag nx-tag--soc">S2 Direitos H.</span>
+              <span class="nx-tag nx-tag--gov">G1.3 Compliance</span>
+              <span class="nx-tag nx-tag--gov">G2 Inovação</span>
+            </div>
+          </div>
+          <div class="nx-comp__note">Léxico ESG · hover invierte el tag a tinta · variantes <code>--env</code> outline, <code>--soc</code> peach, <code>--gov</code> orange-deep.</div>
+        </article>
+
+        <article class="nx-comp" style="grid-column:span 6">
+          <div class="nx-comp__title">Asset card <small>.nx-asset</small></div>
+          <div class="nx-comp__body" style="padding:14px">
+            <div class="nx-asset" style="max-width:320px">
+              <div class="nx-asset__img"></div>
+              <div class="nx-asset__body">
+                <div class="nx-asset__name">La Movida</div>
+                <div class="nx-asset__meta"><b>1.660 m²</b><span>· Escritório</span><span>· Matosinhos</span></div>
+                <div class="nx-asset__status">LEED Gold® · Em operação</div>
+              </div>
+            </div>
+          </div>
+          <div class="nx-comp__note">Mini-card · thumb striped placeholder · meta hairline-separated · status mono.</div>
+        </article>
+
+        <article class="nx-comp" style="grid-column:span 12">
+          <div class="nx-comp__title">Chapter footer nav <small>.nx-footnav</small></div>
+          <div class="nx-comp__body" style="align-items:stretch">
+            <div class="nx-footnav">
+              <div class="nx-footnav__cell nx-footnav__brand">N<span aria-hidden="true">≡</span><span class="x">X</span><span aria-hidden="true">∧</span></div>
+              <div class="nx-footnav__cell">Índice</div>
+              <div class="nx-footnav__cell">01 Nexa</div>
+              <div class="nx-footnav__cell is-current">02 Situação Atual</div>
+              <div class="nx-footnav__cell">03 Connect, Invest &amp; Build the future</div>
+              <div class="nx-footnav__cell is-current-ink">Análise de Dupla Materialidade</div>
+              <div class="nx-footnav__cell nx-footnav__page">35</div>
+            </div>
+          </div>
+          <div class="nx-comp__note">Linear strip permanente · sección actual rellenada en orange · 04 Materialidade rellenada en ink (jerarquía dual del impreso).</div>
+        </article>
+
+        <article class="nx-comp" style="grid-column:span 12">
+          <div class="nx-comp__title">Editorial quote <small>.nx-quote</small></div>
+          <div class="nx-comp__body" style="align-items:stretch">
+            <blockquote class="nx-quote">
+              "Para a Nexa, o investimento sustentável assenta em dois pilares: boa governação e visão de longo prazo."
+              <small>— Frase-firma · Capítulo 03 · pg 28</small>
+            </blockquote>
+          </div>
+          <div class="nx-comp__note">Inter Italic 700 sobre ink · ancla las páginas-filosofía. Aparece 4 veces en el scroll completo, distribuida según los puntos 8, 23, 28, 35 del impreso.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §06 MOTION ===== -->
+  <section class="nx-sect nx-sect--paper" id="motion">
+    <div class="nx-shell">
+      <header class="nx-sect__head">
+        <span class="nx-eyebrow nx-caps">§06 — Motion</span>
+        <h2 class="nx-sect__title">Movimiento <em>arquitectónico</em>: rápido al inicio, lento al final. Como una viga que cae y se asienta.</h2>
+        <p class="nx-sect__intro">El movimiento es signal — no decoración. Toda transición usa una de cuatro easings nombradas. Duraciones limitadas: <code>quick 180ms</code>, <code>base 360ms</code>, <code>slow 720ms</code>, <code>epic 1400ms</code> (reservada para hero reveals y patterns).</p>
+      </header>
+
+      <div class="nx-motion">
+        <div class="nx-motion__card">
+          <div class="nx-motion__name">Arch <small>cubic-bezier(.7, 0, .2, 1)</small></div>
+          <div class="demo"><span class="ball b-arch"></span></div>
+          <div class="nx-comp__note">Default del sistema. Reveals al scroll, X mark drawing, planks falling.</div>
+        </div>
+        <div class="nx-motion__card">
+          <div class="nx-motion__name">Out <small>cubic-bezier(.22, 1, .36, 1)</small></div>
+          <div class="demo"><span class="ball b-out"></span></div>
+          <div class="nx-comp__note">Hovers, fades de UI cotidiana, transiciones de tags.</div>
+        </div>
+        <div class="nx-motion__card">
+          <div class="nx-motion__name">Spring <small>cubic-bezier(.34, 1.56, .64, 1)</small></div>
+          <div class="demo"><span class="ball b-spring"></span></div>
+          <div class="nx-comp__note">Sparse — solo en el "efeito surpresa" del final del scroll.</div>
+        </div>
+        <div class="nx-motion__card">
+          <div class="nx-motion__name">In <small>cubic-bezier(.32, 0, .67, 0)</small></div>
+          <div class="demo"><span class="ball b-in"></span></div>
+          <div class="nx-comp__note">Salidas. Cuando un elemento se va, no cuando llega.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px;display:grid;gap:14px;max-width:760px">
+        <h3 style="font-size:var(--nx-size-xl);font-weight:var(--nx-w-light);letter-spacing:var(--nx-track-tight)">Reglas duras</h3>
+        <ul style="display:grid;gap:10px;list-style:none">
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><span style="color:var(--nx-orange)">×</span><span><strong>No</strong> usar <code>prefers-reduced-motion</code> como off-switch global. Solo en cursor personalizado y partículas pesadas. iOS Low Power Mode lo activa silenciosamente y rompe el sitio entero.</span></li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><span style="color:var(--nx-orange)">×</span><span><strong>No</strong> autoplay video. <strong>Sí</strong> autoplay SVG/CSS continuo (patterns) en duraciones largas (8s+).</span></li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><span style="color:var(--nx-orange)">×</span><span><strong>No</strong> easing default del browser (linear, ease). Siempre nombrar la curva.</span></li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><span style="color:var(--nx-orange)">×</span><span>Stagger de elementos: <code>40ms × index</code>. Más es lento, menos pierde el ritmo.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §07 COMPOSITIONS ===== -->
+  <section class="nx-sect" id="mocks">
+    <div class="nx-shell">
+      <header class="nx-sect__head">
+        <span class="nx-eyebrow nx-caps">§07 — Composiciones</span>
+        <h2 class="nx-sect__title">Tres frames-tipo. Hero, página-filosofía, y portada de capítulo. Los tres deben aparecer en el scroll de la web.</h2>
+        <p class="nx-sect__intro">No son pantallas finales. Son <em>vibe-marks</em> — sirven a Claude Code como anclas visuales para implementar el long-scroll. Cada frame respeta las reglas del sistema.</p>
+      </header>
+
+      <div class="nx-mocks">
+        <!-- Hero mock -->
+        <div class="nx-mock nx-mock--hero">
+          <div class="nx-mock__inner">
+            <div class="title">Análise de 1 de Janeiro<br/>a 31 de Dezembro de 2025<span class="dot">.</span></div>
+          </div>
+          <svg class="chain" viewBox="0 0 200 100" aria-hidden="true">
+            <defs>
+              <linearGradient id="steel" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#9A9794"/><stop offset=".5" stop-color="#D6D1C7"/><stop offset="1" stop-color="#7A7775"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="40"  cy="50" rx="22" ry="32" stroke="url(#steel)" stroke-width="8" fill="none"/>
+            <ellipse cx="160" cy="50" rx="22" ry="32" stroke="url(#steel)" stroke-width="8" fill="none"/>
+            <ellipse cx="100" cy="50" rx="32" ry="20" stroke="#E36420" stroke-width="9" fill="none"
+                     stroke-dasharray="3 4" style="filter:drop-shadow(0 0 8px rgba(227,100,32,.5))"/>
+          </svg>
+          <div class="kpis">
+            <div class="vp"><b>198M€</b>AUM</div>
+            <div class="vp"><b>18</b>Ativos</div>
+            <div class="vp"><b>17,2%</b>Renováveis</div>
+            <div class="vp"><b>−21,1%</b>Energia</div>
+          </div>
+          <div class="nx-mock__caption">// 07.A · Hero · chain metaphor + KPI strip + lede</div>
+        </div>
+
+        <!-- Philosophy mock -->
+        <div class="nx-mock nx-mock--philosophy">
+          <svg class="xmini" viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="2"/>
+            <line x1="21" y1="3" x2="3" y2="21" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <div class="phrase">Analisar com rigor.<br/>Gerir com propósito.<br/>Construir para durar.</div>
+          <div class="skyline" id="mock-skyline"></div>
+          <div class="nx-mock__caption">// 07.B · Filosofía · skyline bars · italic bold</div>
+        </div>
+
+        <!-- Chapter cover mock -->
+        <div class="nx-mock nx-mock--chapter">
+          <div class="left"></div>
+          <div class="title">Connect, Invest, Build the future<span style="color:rgba(45,45,44,.5)">.</span></div>
+          <div class="num">03</div>
+          <div class="nx-mock__caption">// 07.C · Chapter cover · sun-burst wallpaper + numeral · half-bleed orange</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HANDOFF ===== -->
+  <section class="nx-sect nx-sect--ink" id="handoff">
+    <div class="nx-shell" style="display:grid;gap:32px;max-width:780px">
+      <span class="nx-eyebrow nx-eyebrow--ink nx-caps">→ Handoff</span>
+      <h2 class="nx-sect__title">Listo para implementación.</h2>
+      <p class="nx-sect__intro" style="font-size:var(--nx-size-lg)">Los tokens viven en <code>nx-tokens.css</code>. Las decisiones numeradas viven en <code>BRAND_GUIDELINES.md</code>. Este documento es la referencia visual. Claude Code puede empezar a construir <code>index.html</code> sobre estas bases.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:16px">
+        <a class="nx-pillstat" href="nx-tokens.css" target="_blank" style="text-decoration:none">
+          <div class="nx-pillstat__num" style="font-size:1.4rem">nx-tokens.css</div>
+          <div class="nx-pillstat__label">CSS variables · colores, type, motion</div>
+        </a>
+        <a class="nx-pillstat" href="BRAND_GUIDELINES.md" target="_blank" style="text-decoration:none">
+          <div class="nx-pillstat__num" style="font-size:1.4rem">BRAND_GUIDELINES.md</div>
+          <div class="nx-pillstat__label">Decisiones numeradas · do/don't</div>
+        </a>
+        <div class="nx-pillstat">
+          <div class="nx-pillstat__num" style="font-size:1.4rem">v0.1</div>
+          <div class="nx-pillstat__label">Working draft · ajustar tras feedback MFZ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="nx-sect" style="padding:48px 0;background:var(--nx-ink);color:var(--nx-mute-on-ink);font-size:var(--nx-size-xs)">
+    <div class="nx-shell" style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div><span class="nx-wordmark" style="color:var(--nx-on-ink)">N<span aria-hidden="true">≡</span><span class="x">X</span><span aria-hidden="true">∧</span></span> · Design System v0.1</div>
+      <div>Sustainability Report · Web Edition · 2026</div>
+      <div class="nx-mono">// efeito surpresa</div>
+    </div>
+  </footer>
+
+  <script>
+    // ============ Planks (hero bottom) ============
+    (function planks(){
+      const root = document.getElementById('planks'); if(!root) return;
+      const N = 18;
+      for(let i=0;i<N;i++){
+        const s = document.createElement('span');
+        const w = 80 + Math.random()*200;
+        const h = 12 + Math.random()*10;
+        s.style.width = w + 'px';
+        s.style.height = h + 'px';
+        s.style.left = (Math.random()*100 - 8) + '%';
+        s.style.top  = (10 + Math.random()*78) + '%';
+        s.style.animationDelay = (Math.random()*0.8 + 0.2) + 's';
+        s.style.opacity = (0.4 + Math.random()*0.6).toFixed(2);
+        root.appendChild(s);
+      }
+    })();
+
+    // ============ Skyline pattern (Pattern A) ============
+    function skyline(host, count){
+      const N = count || 36;
+      for(let i=0;i<N;i++){
+        const b = document.createElement('span');
+        b.className = 'bar';
+        const h = 20 + Math.random()*Math.random()*100;
+        b.style.height = h + '%';
+        b.style.animationDelay = (Math.random()*0.4 + i*0.018) + 's';
+        host.appendChild(b);
+      }
+    }
+    skyline(document.getElementById('bars-a'));
+    skyline(document.getElementById('mock-skyline'), 44);
+
+    // ============ Wind dashes (Pattern B) ============
+    (function wind(){
+      const host = document.getElementById('wind-a'); if(!host) return;
+      const N = 80;
+      for(let i=0;i<N;i++){
+        const d = document.createElement('span');
+        d.className = 'dash';
+        const rot = (Math.random()*60 - 30).toFixed(1);
+        d.style.setProperty('--rot', rot + 'deg');
+        d.style.left = (Math.random()*100) + '%';
+        d.style.top  = (Math.random()*100) + '%';
+        d.style.transform = `rotate(${rot}deg)`;
+        d.style.opacity = (0.25 + Math.random()*0.55).toFixed(2);
+        d.style.animationDelay = (Math.random()*4).toFixed(2) + 's';
+        d.style.animationDuration = (6 + Math.random()*6).toFixed(1) + 's';
+        host.appendChild(d);
+      }
+    })();
+
+    // ============ Wheat field (Pattern C) — diagonal dash grid ============
+    (function wheat(){
+      const g = document.getElementById('wheat-a'); if(!g) return;
+      const cols = 26, rows = 18, dx = 400/cols, dy = 300/rows;
+      const svgNS = 'http://www.w3.org/2000/svg';
+      for(let r=0;r<rows;r++){
+        for(let c=0;c<cols;c++){
+          const x = c*dx + dx/2, y = r*dy + dy/2;
+          const a = 35; // angle of dash
+          const len = 9;
+          const rad = a*Math.PI/180;
+          const ln = document.createElementNS(svgNS,'line');
+          ln.setAttribute('x1', x - Math.cos(rad)*len);
+          ln.setAttribute('y1', y - Math.sin(rad)*len);
+          ln.setAttribute('x2', x + Math.cos(rad)*len);
+          ln.setAttribute('y2', y + Math.sin(rad)*len);
+          ln.setAttribute('class','stalk');
+          ln.style.animationDelay = ((r+c)*0.05).toFixed(2) + 's';
+          g.appendChild(ln);
+        }
+      }
+    })();
+
+    // ============ Sun bursts (Pattern D) ============
+    (function suns(){
+      const host = document.getElementById('suns-a'); if(!host) return;
+      const N = 20;
+      for(let i=0;i<N;i++){
+        const wrap = document.createElement('div');
+        wrap.className = 'sun';
+        wrap.innerHTML = sunSVG();
+        wrap.style.animationDuration = (10 + Math.random()*10).toFixed(1) + 's';
+        host.appendChild(wrap);
+      }
+    })();
+    function sunSVG(){
+      const rays = 14, c = 50, r1 = 14, r2 = 30;
+      let lines = '';
+      for(let i=0;i<rays;i++){
+        const a = (i/rays)*Math.PI*2;
+        const x1 = c + Math.cos(a)*r1, y1 = c + Math.sin(a)*r1;
+        const x2 = c + Math.cos(a)*r2, y2 = c + Math.sin(a)*r2;
+        lines += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#C2531A" stroke-width="3" stroke-linecap="butt"/>`;
+      }
+      return `<svg viewBox="0 0 100 100">${lines}</svg>`;
+    }
+
+    // ============ Count-ups for KPI demos ============
+    (function counters(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(en=>{
+          if(!en.isIntersecting) return;
+          const el = en.target;
+          const target = parseFloat(el.dataset.count);
+          const suffix = el.dataset.suffix || '';
+          const decimals = (el.dataset.count.split('.')[1] || '').length;
+          const dur = 1400;
+          const start = performance.now();
+          function tick(t){
+            const k = Math.min(1, (t-start)/dur);
+            const eased = 1 - Math.pow(1-k, 3);
+            const v = (target*eased).toFixed(decimals).replace('.', ',');
+            el.firstChild.nodeValue = v;
+            if(k < 1) requestAnimationFrame(tick);
+            else el.innerHTML = (decimals ? target.toFixed(decimals).replace('.', ',') : target) + (suffix ? `<span class="unit">${suffix}</span>` : '');
+          }
+          requestAnimationFrame(tick);
+          io.unobserve(el);
+        });
+      },{threshold:0.4});
+      document.querySelectorAll('[data-count]').forEach(el=>{
+        // pre-clear to first text node
+        if(!el.firstChild) el.appendChild(document.createTextNode('0'));
+        else el.firstChild.nodeValue = '0';
+        io.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Internal source from Claude Design (already integrated to root)
+_archive/
+
+# Commercial fonts — never commit
+**/*.ttc
+**/HelveticaNeue*.woff2
+
+# OS / editor
+.DS_Store
+*.log
+Thumbs.db
